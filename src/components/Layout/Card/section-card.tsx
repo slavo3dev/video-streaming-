@@ -103,7 +103,7 @@ export const CardSection = () => {
           {creatorData.map((video: {
             id: string; imgUrl: string
           }, idx: {}) => {
-            return <Link href={`http://localhost:3000/video/${video.id}`} key={video.id + Math.random()}><Card id={idx} key={video.id} imgUrl={video.imgUrl} /></Link>;
+            return <Link href={`/video/${video.id}`} key={video.id + Math.random()}><Card id={idx} key={video.id} imgUrl={video.imgUrl} /></Link>;
           })}
         </div>
       </section>
