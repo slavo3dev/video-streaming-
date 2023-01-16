@@ -7,22 +7,22 @@ import { Footer } from "src/components/index"
 import { Spinner } from "src/components/index";
 
 export default function HomePage() {
-  
-  const[auth, setAuth] = useState<string | boolean>("loading")
-    useEffect(() => {
+
+  const [auth, setAuth] = useState<string | boolean>("loading")
+  useEffect(() => {
     const handleLoggedIn = async () => {
       const isLoggedIn = await magic.user.isLoggedIn();
       if (isLoggedIn) {
-         setAuth(true)
+        setAuth(true)
       } else {
         setAuth(false)
       }
     }
     handleLoggedIn();
-  },[auth])
- 
+  }, [auth])
+
   let homePage = (
-  <div className="flex flex-col min-h-screen w-full">
+    <div className="flex flex-col min-h-screen w-full">
       <div className="lg:absolute lg:inset-y-0 " >
       </div>
       <Header />
@@ -36,10 +36,8 @@ export default function HomePage() {
     <div><Login /> </div>
   )
   let Spinning = (
-    <Spinner/>
+    <Spinner />
   )
-  
-  return auth === 'loading' ?  Spinning : auth ? homePage : LoginUser
-  
 
+  return auth === 'loading' ? Spinning : auth ? homePage : LoginUser
 }

@@ -14,23 +14,6 @@ export const CardSection = () => {
   const [selectCreator, setSelectCreator] = useState("creatorOne");
   const title = selectCreator;
   let creatorData = getVideos(selectCreator)
-  //  const droplist = useRef(null);
-
-  // WORK IN PROGRESS
-
-  //   // only add the event listener when the dropdown is open
-  //   useEffect(() => {
-  //   // only add the event listener when the dropdown is opened
-  //   if (!listOpen) return;
-  //   function handleClick(event: { target: any; }) {
-  //     if (droplist.current && !droplist.current.contains(event.target)) {
-  //       setListOpen(false);
-  //     }
-  //   }
-  //   window.addEventListener("click", handleClick);
-  //   // clean up
-  //   return () => window.removeEventListener("click", handleClick);
-  // }, [listOpen]);
 
   console.log("OnClick: ", listOpen)
   const creatorMenu = (
