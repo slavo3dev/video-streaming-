@@ -1,6 +1,6 @@
 import data from "data/data-videos.json"
 
-interface ObjectVideoType{ 
+interface ObjectVideoType { 
     creatorOne: {
        items: []   
   }
