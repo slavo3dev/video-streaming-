@@ -9,6 +9,7 @@ import { Spinner } from "src/components/index";
 export default function HomePage() {
 
   const [auth, setAuth] = useState<string | boolean>("loading")
+  
   useEffect(() => {
     const handleLoggedIn = async () => {
       const isLoggedIn = await magic.user.isLoggedIn();
