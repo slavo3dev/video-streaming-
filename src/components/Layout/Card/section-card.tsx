@@ -12,57 +12,64 @@ export const CardSection = () => {
 
   const [listOpen, setListOpen] = useState(false);
   const [selectCreator, setSelectCreator] = useState("creatorOne");
-  const title = selectCreator;
-  let creatorData = getVideos(selectCreator)
+  const [creatorTitle, setCreatorTitle] = useState("Full Send Podcast");
+  let creatorData = getVideos(selectCreator);
 
+  const closeWhen = () => {
+    if (listOpen) {
+      setListOpen(false)
+    }
+  }
+
+  const title = creatorTitle;
   const creatorMenu = (
-    <div className="text-blue-500 h-10 m-5 " >
-      <div onClick={() => setListOpen(!listOpen)} className="text-white lg:bg-sky-500 sm:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-md lg:px-3 py-4 text-center inline-flex lg:items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">My Creators <svg className="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></div>
+    <div className="text-blue-500 h-10 m-5 "  >
+      <div onClick={() => setListOpen(!listOpen)} className="text-white bg-sky-500 rounded-lg text-md px-3 py-4 text-center inline-flex items-center active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out hover:shadow-lg focus:bg-blue-700 focus:shadow-lg ">My Creators <svg className="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></div>
       <div className={`${listOpen ? ` visible` : " invisible "}" bg-blue-600 z-50 relative rounded shadow sm:w-32 lg:w-60  dark:bg-gray-700"`}>
         <ul className="h-48 py-1 overflow-y-auto  text-white  dark:text-gray-200" onClick={() => setListOpen(!listOpen)} >
-          <li onClick={() => setSelectCreator("creatorOne")}>
+          <li onClick={() => { setSelectCreator("creatorOne"); setCreatorTitle("Full Send Podcast") }}>
             <Link href="#" className="flex items-center px-4 py-2 hover:bg-sky-500 dark:hover:bg-gray-600 dark:hover:text-white" >
               <Image width={6} height={6} className="w-6 h-6 mr-2 rounded-full" src={full} alt="Jese image" />
               Full Send Podcast
             </Link>
           </li>
-          <li onClick={() => setSelectCreator("creatorTwo")}>
+          <li onClick={() => { setSelectCreator("creatorTwo"); setCreatorTitle("David Dobrik") }}>
             <Link href="#" className="flex items-center px-4 py-2 hover:bg-sky-500 dark:hover:bg-gray-600 dark:hover:text-white">
               <Image width={6} height={6} className="w-6 h-6 mr-2 rounded-full" src={david} alt="Jese image" />
               David Dobrik
             </Link>
           </li>
-          <li onClick={() => setSelectCreator("creatorThree")}>
+          <li onClick={() => { setSelectCreator("creatorThree"); setCreatorTitle("Charles Leclerc") }}>
             <Link href="#" className="flex items-center px-4 py-2 hover:bg-sky-500 dark:hover:bg-gray-600 dark:hover:text-white">
               <Image width={6} height={6} className="w-6 h-6 mr-2 rounded-full" src={charles} alt="Jese image" />
               Charles Leclerc
             </Link>
           </li>
-          <li onClick={() => setSelectCreator("creatorFour")}>
+          <li onClick={() => { setSelectCreator("creatorFour"); setCreatorTitle("Full Send MMA") }}>
             <Link href="#" className="flex items-center px-4 py-2 hover:bg-sky-500 dark:hover:bg-gray-600 dark:hover:text-white">
               <Image width={6} height={6} className="w-6 h-6 mr-2 rounded-full" src={mma} alt="Jese image" />
               FULL SEND MMA
             </Link>
           </li>
-          <li onClick={() => setSelectCreator("creatorFive")}>
+          <li onClick={() => { setSelectCreator("creatorFive"); setCreatorTitle("Amy Cuddy") }}>
             <Link href="#" className="flex items-center px-4 py-2 hover:bg-sky-500 dark:hover:bg-gray-600 dark:hover:text-white">
               <Image width={6} height={6} className="w-6 h-6 mr-2 rounded-full" src={david} alt="Jese image" />
               Amy Cuddy
             </Link>
           </li>
-          <li onClick={() => setSelectCreator("creatorFour")}>
+          <li onClick={() => { setSelectCreator("creatorFour"); setCreatorTitle("Full Send MMA") }}>
             <Link href="#" className="flex items-center px-4 py-2 hover:bg-sky-500 dark:hover:bg-gray-600 dark:hover:text-white">
               <Image width={6} height={6} className="w-6 h-6 mr-2 rounded-full" src={full} alt="Jese image" />
               Joseph Mcfall
             </Link>
           </li>
-          <li onClick={() => setSelectCreator("data.creatorOne.items")}>
+          <li onClick={() => { setSelectCreator("creatorFour"); setCreatorTitle("Full Send MMA") }}>
             <Link href="#" className="flex items-center px-4 py-2 hover:bg-sky-500 dark:hover:bg-gray-600 dark:hover:text-white">
               <Image width={6} height={6} className="w-6 h-6 mr-2 rounded-full" src={charles} alt="Jese image" />
               Roberta Casa
             </Link>
           </li>
-          <li onClick={() => setSelectCreator("data.creatorOne.items")}>
+          <li onClick={() => { setSelectCreator("creatorFour"); setCreatorTitle("Full Send MMA") }}>
             <Link href="#" className="flex items-center px-4 py-2 hover:bg-sky-500 dark:hover:bg-gray-600 dark:hover:text-white">
               <Image width={6} height={6} className="w-6 h-6 mr-2 rounded-full" src={full} alt="Jese image" />
               Neil Sims
@@ -77,13 +84,16 @@ export const CardSection = () => {
     </div>
   )
   return (
-    <div className="flex flex-col">
+
+    <div className="flex flex-col" onClick={closeWhen}>
       {creatorMenu}
       <section className="flex flex-col ">
-        <h1 className="text-4xl  pt-3 ml-6 font-bold text-blue-500">{title}</h1>
+        <h1 className="text-4xl  pt-3 ml-6 font-bold text-blue-500">
+
+          {title}</h1>
         <div className="overflow-x-scroll w-screen flex flex-row">
           {creatorData.map((video: {
-            id: string; imgUrl: string
+            id: string; imgUrl: string;
           }, idx: {}) => {
             return <Link href={`/video/${video.id}`} key={video.id + Math.random()}><Card id={idx} key={video.id} imgUrl={video.imgUrl} /></Link>;
           })}
