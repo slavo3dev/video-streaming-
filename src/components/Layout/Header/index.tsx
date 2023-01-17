@@ -11,7 +11,7 @@ export const Header: FC = () => {
     try {
       const logout = await magic.user.logout();
       if (logout) {
-        router.push('/login')
+       router.reload()
       }
     } catch (error) {
       console.log("Error", error)
