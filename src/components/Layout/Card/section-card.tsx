@@ -15,7 +15,6 @@ export const CardSection = () => {
   const title = selectCreator;
   let creatorData = getVideos(selectCreator)
 
-  console.log("OnClick: ", listOpen)
   const creatorMenu = (
     <div className="text-blue-500 h-10 m-5 " >
       <div onClick={() => setListOpen(!listOpen)} className="text-white lg:bg-sky-500 sm:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-md lg:px-3 py-4 text-center inline-flex lg:items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">My Creators <svg className="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></div>
