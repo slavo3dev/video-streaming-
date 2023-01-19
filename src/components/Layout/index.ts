@@ -4,4 +4,5 @@ import { Login } from "src/components/Layout/Login/index"
 import { Card } from "src/components/Layout/Card/index"
 import { CardSection } from "src/components/Layout/Card/section-card"
 import { Spinner } from "./Spinner/spinner"
-export { Footer, Header, Login, Card, CardSection, Spinner }
+import { Profile } from "./subscribeInfo"
+export { Footer, Header, Login, Card, CardSection, Spinner, Profile }
