@@ -8,6 +8,7 @@ import david from "public/david.jpeg"
 import charles from "public/charles.jpeg"
 import mma from "public/mma.png"
 
+
 export const CardSection = () => {
 
   const [listOpen, setListOpen] = useState(false);
@@ -101,4 +102,5 @@ export const CardSection = () => {
       </section>
     </div>
   );
+
 };
