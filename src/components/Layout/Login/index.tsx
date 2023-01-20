@@ -34,14 +34,16 @@ export const Login: FC = () => {
   };
   return (
     <div className="flex flex-col min-h-screen">
+       <h1 className="center m-0 absolute top-1/4 left-2/4 text-xl text-blue-600 sm:text-2xl font-bold">Video Streaming</h1>
     <div className="center m-0 absolute top-2/4 left-2/4">
+     
       <form className=" w-80 items-start h-64 p-8 justify-start rounded-md text-left flex flex-col  showcase-content relative">
         <h1 className="text-white mb-5 text-2xl font-bold">Sign In</h1>
         <div className="w-64 h-48 flex flex-col ">
           <input
             className="email rounded-md p-2 h-12 mb-7 w-full form-info-email"
             type="email"
-            placeholder="Email or phone number"
+            placeholder="Email"
             onChange={handleOnChangeEmail}
           />
         </div>

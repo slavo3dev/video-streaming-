@@ -2,14 +2,29 @@ import { useState } from "react";
 import Image from "next/image";
 import icon from "public/menu-icon.ico";
 import Link from "next/link";
+import { useRouter } from "next/router";
+
+import { magic } from "lib/magic-client";
 
 export const Burger = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  return (
+
+const router = useRouter();
+const handleLogout = async()=>{
+try{
+  const logout = await magic.user.logout();
+  if (logout){
+    router.reload()
+  }
+} catch(error) {
+  console.log("Error")
+}
+}
+ return (
     <div className="mobile-view flex-col absolute inset-y-0 right-0">
-      <div onClick={() => setDropdownOpen(!dropdownOpen)}
+      <div 
         className="overflow-hiden rounded-full w-48 h-16 mb-2 flex  hover:cursor-pointer">
-        <Image className="absolute w-10 bottom-0 inset-y-0 right-0" src={icon} alt="" />
+        <Image onClick={() => setDropdownOpen(!dropdownOpen)} className="absolute w-10 bottom-0 inset-y-0 right-0" src={icon} alt="" />
       </div>
       <div
         className={`${dropdownOpen ? `top-full opacity-100 visible` : "top-[110%] invisible opacity-0"}
@@ -36,16 +51,16 @@ export const Burger = () => {
           <li className="">
             <Link
               className="nav-link block pr-2 lg:px-2 py-2 "
-              href="#!"
+              href="/setings"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light">
-              Contact
+              Setings
             </Link>
           </li>
           <li className="">
-            <Link
+            <Link onClick={handleLogout}
               className="nav-link block pr-2 lg:px-2 py-2 "
-              href="/login"
+              href="#!"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light">
               Logout
