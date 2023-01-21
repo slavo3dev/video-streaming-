@@ -5,7 +5,9 @@ import { magic } from "lib/magic-client"
 import { CreateUser } from "lib//userTag"
 import { useRouter } from "next/router"
 
+
 export const Header: FC = () => {
+
   const router = useRouter();
   const handleLogout = async () => {
     try {
@@ -18,6 +20,7 @@ export const Header: FC = () => {
       // Handle errors if required!
     }
   }
+ 
   return (
     <header className="header flex w-full items-center bg-sky-500 from-black justify-between px-2 pb6 h-20 z-10">
       <div className="mobile-view text-white">
@@ -49,10 +52,10 @@ export const Header: FC = () => {
                 <li className="nav-item">
                   <Link
                     className="nav-link block pr-2 lg:px-2 py-2 "
-                    href="#!"
+                    href="/setings"
                     data-mdb-ripple="true"
                     data-mdb-ripple-color="light">
-                    Contact
+                    Setings
                   </Link>
                 </li>
                 <li className="nav-item">
