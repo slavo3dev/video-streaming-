@@ -2,27 +2,16 @@ import { useState } from "react";
 import Image from "next/image";
 import icon from "public/menu-icon.ico";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { LogoutFunc } from "lib/loginFunc";
 
-import { magic } from "lib/magic-client";
 
 export const Burger = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-const router = useRouter();
-const handleLogout = async()=>{
-try{
-  const logout = await magic.user.logout();
-  if (logout){
-    router.reload()
-  }
-} catch(error) {
-  console.log("Error")
-}
-}
- return (
+
+  return (
     <div className="mobile-view flex-col absolute inset-y-0 right-0">
-      <div 
+      <div
         className="overflow-hiden rounded-full w-48 h-16 mb-2 flex  hover:cursor-pointer">
         <Image onClick={() => setDropdownOpen(!dropdownOpen)} className="absolute w-10 bottom-0 inset-y-0 right-0" src={icon} alt="" />
       </div>
@@ -33,7 +22,7 @@ try{
           <li className="">
             <Link
               className="nav-link block pr-2 lg:px-2 py-2  transition duration-150 ease-in-out"
-              href="#!"
+              href="/"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light">
               Home
@@ -58,13 +47,10 @@ try{
             </Link>
           </li>
           <li className="">
-            <Link onClick={handleLogout}
-              className="nav-link block pr-2 lg:px-2 py-2 "
-              href="#!"
-              data-mdb-ripple="true"
-              data-mdb-ripple-color="light">
-              Logout
-            </Link>
+            <span className="nav-link block pr-2 lg:px-2 py-2 ">
+            <LogoutFunc />
+            </span>
+
           </li>
           <li className="">
           </li>
@@ -73,3 +59,4 @@ try{
     </div>
   );
 };
+
