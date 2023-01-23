@@ -2,14 +2,18 @@ import { useState } from "react";
 import Image from "next/image";
 import icon from "public/menu-icon.ico";
 import Link from "next/link";
+import { LogoutFunc } from "lib/loginFunc";
+
 
 export const Burger = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+
+
   return (
     <div className="mobile-view flex-col absolute inset-y-0 right-0">
-      <div onClick={() => setDropdownOpen(!dropdownOpen)}
+      <div
         className="overflow-hiden rounded-full w-48 h-16 mb-2 flex  hover:cursor-pointer">
-        <Image className="absolute w-10 bottom-0 inset-y-0 right-0" src={icon} alt="" />
+        <Image onClick={() => setDropdownOpen(!dropdownOpen)} className="absolute w-10 bottom-0 inset-y-0 right-0" src={icon} alt="" />
       </div>
       <div
         className={`${dropdownOpen ? `top-full opacity-100 visible` : "top-[110%] invisible opacity-0"}
@@ -18,7 +22,7 @@ export const Burger = () => {
           <li className="">
             <Link
               className="nav-link block pr-2 lg:px-2 py-2  transition duration-150 ease-in-out"
-              href="#!"
+              href="/"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light">
               Home
@@ -36,20 +40,17 @@ export const Burger = () => {
           <li className="">
             <Link
               className="nav-link block pr-2 lg:px-2 py-2 "
-              href="#!"
+              href="/setings"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light">
-              Contact
+              Setings
             </Link>
           </li>
           <li className="">
-            <Link
-              className="nav-link block pr-2 lg:px-2 py-2 "
-              href="/login"
-              data-mdb-ripple="true"
-              data-mdb-ripple-color="light">
-              Logout
-            </Link>
+            <span className="nav-link block pr-2 lg:px-2 py-2 ">
+            <LogoutFunc />
+            </span>
+
           </li>
           <li className="">
           </li>
@@ -58,3 +59,4 @@ export const Burger = () => {
     </div>
   );
 };
+
