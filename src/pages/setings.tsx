@@ -37,7 +37,7 @@ export default function Settings() {
                         <li className="py-2 flex tracking-wider "><Image width={6} height={6} className="w-6 h-6 mr-2 rounded-full" src={menu} alt={""}></Image><Link href={""}>Add payment</Link></li>
                         <li className="py-2 flex tracking-wider "><Image width={6} height={6} className="w-6 h-6 mr-2 rounded-full" src={menu} alt={""}></Image><Link href={""}>Manage Subscription</Link></li>
                         <li className="py-2 flex tracking-wider "><Image width={6} height={6} className="w-6 h-6 mr-2 rounded-full" src={menu} alt={""}></Image><Link href={""}>Change Email</Link></li>
-                        <li className="py-2 flex tracking-wider " ><Image width={6} height={6} className="w-6 h-6 mr-2 rounded-full" src={menu} alt={""}></Image> <LogoutFunc /></li>
+                        <li className="py-2 flex tracking-wider "><Image width={6} height={6} className="w-6 h-6 mr-2 rounded-full" src={menu} alt={""}></Image> <LogoutFunc /></li>
                     </ul>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Card } from ".";
-import { getVideos } from "lib/videos"
+import { getVideos } from "lib/videos";
 import { useState } from "react";
 import Image from "next/image";
 import full from "public/fullsendpodcast.jpeg"
@@ -25,7 +25,7 @@ export const CardSection = () => {
   const title = creatorTitle;
   const creatorMenu = (
     <div className="text-blue-500 h-10 m-5 "  >
-      <div onClick={() => setListOpen(!listOpen)} className="text-white bg-sky-500 rounded-lg text-md px-3 py-4 text-center inline-flex items-center active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out hover:shadow-lg focus:bg-blue-700 focus:shadow-lg ">My Creators <svg className="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></div>
+      <div onClick={() => setListOpen(!listOpen)} className="text-white bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg text-md px-3 py-4 text-center inline-flex items-center active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out hover:shadow-lg focus:bg-blue-700 focus:shadow-lg ">My Creators <svg className="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></div>
       <div className={`${listOpen ? ` visible` : " invisible "}" bg-blue-600 z-50 relative rounded shadow sm:w-32 lg:w-60  dark:bg-gray-700"`}>
         <ul className="h-48 py-1 overflow-y-auto  text-white  dark:text-gray-200" onClick={() => setListOpen(!listOpen)} >
           <li onClick={() => { setSelectCreator("creatorOne"); setCreatorTitle("Full Send Podcast") }}>

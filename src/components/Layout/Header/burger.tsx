@@ -21,7 +21,7 @@ export const Burger = () => {
         <ul className="navbar-nav mr-auto flex flex-col">
           <li className="">
             <Link
-              className="nav-link block pr-2 lg:px-2 py-2  transition duration-150 ease-in-out"
+              className="nav-link block pr-2 lg:px-2 py-2 text-white  transition duration-150 ease-in-out"
               href="/"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light">
@@ -30,8 +30,8 @@ export const Burger = () => {
           </li>
           <li className="">
             <Link
-              className="nav-link block pr-2 lg:px-2 py-2  "
-              href="#!"
+              className="nav-link block pr-2  text-white lg:px-2 py-2  "
+              href="/creator"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light">
               Creator
@@ -39,7 +39,7 @@ export const Burger = () => {
           </li>
           <li className="">
             <Link
-              className="nav-link block pr-2 lg:px-2 py-2 "
+              className="nav-link block pr-2 text-white lg:px-2 py-2 "
               href="/setings"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light">
@@ -47,7 +47,7 @@ export const Burger = () => {
             </Link>
           </li>
           <li className="">
-            <span className="nav-link block pr-2 lg:px-2 py-2 ">
+            <span className="nav-link block pr-2 text-white lg:px-2 py-2 ">
             <LogoutFunc />
             </span>
 
