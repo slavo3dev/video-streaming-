@@ -22,8 +22,7 @@ const Video = () => {
           src={`https://www.youtube.com/embed/${router.query.videoId}?origin=http://example.com&controls=0&rel=0&controls=0&disablekb=1&autoplay=1&modestbranding=1&start=10&end=23`}
         ></iframe>
       </div>
-      <div className="pb-8"> <Profile imgUrl={david} /> </div>
-
+      <div className="pb-8"> <Profile imgUrl={david}/> </div>
     </div>
   );
 };
