@@ -14,18 +14,11 @@ export const Profile = ({ imgUrl }: any) => {
                     <h1 className="text-sky-500 text-2xl font-bold">CREATOR NAME</h1>
                     <Link
                         className="bg-sky-500 hover:bg-blue-700 text-white font-bold flex space-x-2 justify-center py-1 px-4 rounded-full w-44 active:bg-blue-800"
-                        href={"https://buy.stripe.com/test_8wM2aB3H31vD4k8dQQ"}
+                        href={"https://buy.stripe.com/test_9AQbLb4L7del4k89AC"}
                     >Subscribe</Link>
                     <div className="text-sky-500 text-2xl font-bold">
-                        <h3>Starter plan</h3>
-                        <h5>$20.00 / month</h5>
                     </div>
                 </div>
-
-
-
-
-
             </div>
             <div className="text-base font-normal w-5/6 sm:w-96 text-stone-400">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -36,5 +29,3 @@ export const Profile = ({ imgUrl }: any) => {
                 and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
         </div>)
 }
-
-//https://buy.stripe.com/test_8wM2aB3H31vD4k8dQQ
