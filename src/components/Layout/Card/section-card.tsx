@@ -16,6 +16,8 @@ export const CardSection = () => {
   const [creatorTitle, setCreatorTitle] = useState("Full Send Podcast");
   let creatorData = getVideos(selectCreator);
 
+
+
   const closeWhen = () => {
     if (listOpen) {
       setListOpen(false)
@@ -90,8 +92,9 @@ export const CardSection = () => {
       {creatorMenu}
       <section className="flex flex-col ">
         <h1 className="text-4xl  pt-3 ml-6 font-bold text-blue-500">
-
+           
           {title}</h1>
+      
         <div className="overflow-x-scroll w-screen flex flex-row">
           {creatorData.map((video: {
             id: string; imgUrl: string;
@@ -102,5 +105,5 @@ export const CardSection = () => {
       </section>
     </div>
   );
-
+{}
 };

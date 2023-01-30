@@ -24,6 +24,7 @@ const Video = () => {
       </div>
       <div className="pb-8"> <Profile imgUrl={david}/> </div>
       
+      <div className="pb-8"> <Profile imgUrl={david}/> </div>
     </div>
   );
 };
