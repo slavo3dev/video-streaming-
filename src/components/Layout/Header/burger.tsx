@@ -11,8 +11,7 @@ export const Burger = () => {
 
   return (
     <div className="mobile-view flex-col absolute inset-y-0 right-0">
-      <div
-        className="overflow-hiden rounded-full w-48 h-16 mb-2 flex  hover:cursor-pointer">
+      <div className="overflow-hiden rounded-full w-48 h-16 mb-2 flex  hover:cursor-pointer">
         <Image onClick={() => setDropdownOpen(!dropdownOpen)} className="absolute w-10 bottom-0 inset-y-0 right-0" src={icon} alt="" />
       </div>
       <div
@@ -48,7 +47,7 @@ export const Burger = () => {
           </li>
           <li className="">
             <span className="nav-link block pr-2 text-white lg:px-2 py-2 ">
-            <LogoutFunc />
+              <LogoutFunc />
             </span>
 
           </li>
@@ -59,4 +58,3 @@ export const Burger = () => {
     </div>
   );
 };
-
