@@ -22,7 +22,7 @@ export const Header: FC = () => {
               <Link href="/"
               ><Image width={10} height={10} className="w-10 h-10 mr-2 rounded-full" src={icon} alt={""}></Image>
               </Link>
-              </div>
+            </div>
             <div>
               <div className="desktop-view flex justify-between mx-auto">
 
@@ -59,11 +59,12 @@ export const Header: FC = () => {
                     <span className="nav-link block pr-2 lg:px-2 py-2" >
                       <LogoutFunc /></span>
                   </li>
-                  
+
                 </ul>
               </div>
             </div>
-            <SearchBar/>
+            {/* <div className="desktop-view">
+              <SearchBar /></div> */}
             <div className="desktop-view text-sky-500" >
               <CreateUser />
             </div>
