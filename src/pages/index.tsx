@@ -10,9 +10,9 @@ import Link from "next/link";
 
 export default function HomePage() {
 
-   let creatorData1 = getVideos("creatorThree");
-   let creatorData2 = getVideos("creatorFour");
-   let creatorData3 = getVideos("creatorTwo");
+   let creatorData1 = getVideos("creatorOne");
+   let creatorData2 = getVideos("creatorTwo");
+   let creatorData3 = getVideos("creatorThree");
   const [auth, setAuth] = useState<string | boolean>("loading")
 
   useEffect(() => {
