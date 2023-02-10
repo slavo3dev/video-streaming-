@@ -28,7 +28,7 @@ export const Header: FC = () => {
 
                 <ul className="navbar-nav mr-auto flex lflex-row">
 
-                  <li className="nav-item">
+                  <li className="nav-item hover:bg-sky-300">
                     <Link
                       className="nav-link block pr-2 lg:px-2 py-2  transition duration-150 ease-in-out"
                       href="/"
@@ -37,7 +37,7 @@ export const Header: FC = () => {
                       Home
                     </Link>
                   </li>
-                  <li className="nav-item">
+                  <li className="nav-item hover:bg-sky-300">
                     <Link
                       className="nav-link block pr-2 lg:px-2 py-2  "
                       href="/creator"
@@ -46,7 +46,7 @@ export const Header: FC = () => {
                       Creator
                     </Link>
                   </li>
-                  <li className="nav-item">
+                  <li className="nav-item hover:bg-sky-300">
                     <Link
                       className="nav-link block pr-2 lg:px-2 py-2 "
                       href="/setings"
@@ -55,7 +55,7 @@ export const Header: FC = () => {
                       Setings
                     </Link>
                   </li>
-                  <li className="nav-item">
+                  <li className="nav-item hover:bg-sky-300">
                     <span className="nav-link block pr-2 lg:px-2 py-2" >
                       <LogoutFunc /></span>
                   </li>
