@@ -1,8 +1,6 @@
 import { magic } from "lib/magic-client";
 import { useEffect, useState } from "react";
-import { CardSection } from "src/components";
-import { Login, Header, Footer, Spinner } from "src/components";
-
+import { Login, Header, Footer, Spinner, CardSection } from "src/components";
 
 export default function CreatorPage() {
 
@@ -25,9 +23,6 @@ export default function CreatorPage() {
       <div className="lg:absolute lg:inset-y-0 " >
       </div>
       <Header />
-      { /* this neads to be refactor */ }
-      <CardSection />
-      <CardSection />
       <CardSection />
       <Footer />
     </div>
