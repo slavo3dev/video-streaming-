@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-type CreatorContextType = "string" | any;
+type CreatorContextType = any;
 
 const CreatorContext = createContext<CreatorContextType >("");
 
