@@ -1,5 +1,4 @@
 import Link from "next/link";
-import lex from "public/lex.jpeg"
 import Image from "next/image";
 
 export const CreatorCard = (props:{name:string, photo:any, link:string})=>{
