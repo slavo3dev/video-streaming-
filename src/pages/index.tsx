@@ -4,6 +4,7 @@ import { Card, Login, Header, Footer, Spinner } from "src/components/index";
 import { getVideos } from "lib/videos";
 import Link from "next/link";
 import { CreatorContext } from "src/context";
+import { constants } from "lib/constants";
 
 export default function HomePage() {
 
@@ -29,9 +30,9 @@ export default function HomePage() {
   let videoSection1 = (
     <div className="overflow-x-scroll w-screen flex flex-row"
       onClick={() => {
-        context.setCreator("Full Send Podcast");
-        context.setPayment("https://buy.stripe.com/test_9AQbLbdhD8Y5eYM3cf")
-        context.setImage("https://yt3.googleusercontent.com/5_TYQJ-59yU45NoK1GpQcRuov8OgZuwuSiS-0X8IveZI3QK_tKaiQxx9BHGqVkGogD08zY-txA=s900-c-k-c0x00ffffff-no-rj")
+        context.setCreator(constants.creatorOne.name);
+        context.setPayment(constants.creatorOne.paymentLink);
+        context.setImage(constants.creatorOne.image)
       }} >
       {creatorData1.map((video: {
         id: string; imgUrl: string;
@@ -44,9 +45,9 @@ export default function HomePage() {
   let videoSection2 = (
     <div className="overflow-x-scroll w-screen flex flex-row"
       onClick={() => {
-        context.setCreator("David Dobrik");
-        context.setPayment("https://buy.stripe.com/test_9AQbLb4L7del4k89AC")
-        context.setImage("https://yt3.googleusercontent.com/ytc/AL5GRJULlbEP4MO2qjUSF3X8op4Errek_FlWpoXfbZfRmA=s176-c-k-c0x00ffffff-no-rj")
+        context.setCreator(constants.creatorTwo.name);
+        context.setPayment(constants.creatorTwo.paymentLink);
+        context.setImage(constants.creatorTwo.image);
       }}
     >
       {creatorData2.map((video: {
@@ -60,9 +61,9 @@ export default function HomePage() {
   let videoSection3 = (
     <div className="overflow-x-scroll w-screen flex flex-row"
       onClick={() => {
-        context.setCreator("PowerfulJRE");
-        context.setPayment("https://buy.stripe.com/test_28o2aB2CZ6PX9EsfZ8")
-        context.setImage("https://yt3.googleusercontent.com/ytc/AL5GRJXxw6Z2O6R2LSeCbDFhcBITwJiVxR7-tFOW663eXg=s176-c-k-c0x00ffffff-no-rj")
+        context.setCreator(constants.creatorSeven.name);
+        context.setPayment(constants.creatorSeven.paymentLink)
+        context.setImage(constants.creatorSeven.image)
       }}>
       {creatorData3.map((video: {
         id: string; imgUrl: string;

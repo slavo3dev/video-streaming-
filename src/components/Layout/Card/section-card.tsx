@@ -1,20 +1,12 @@
 import { getVideos } from "lib/videos";
 import { useContext, useState } from "react";
-import full from "public/fullSendHd.jpg"
-import david from "public/davidIcon.jpeg"
-import charles from "public/charles.jpeg"
-import mma from "public/mma.png"
-import ted from "public/ted.jpeg"
-import rogan from "public/rogan.jpg"
 import { CreatorContext } from "src/context";
-import rich from "public/rich.jpeg"
-import lex from "public/lex.jpeg"
 import { CreatorCard } from "./creator-card";
+import { constants } from "lib/constants";
 
 export const CardSection = () => {
   const context = useContext(CreatorContext);
   const [selectCreator, setSelectCreator] = useState("creatorOne");
-
 
   let creatorData = getVideos(selectCreator);
 
@@ -25,37 +17,37 @@ export const CardSection = () => {
           <div className="overflow-x-hidden overflow-y-hidden w-screen flex flex-row">
             <div className="w-96" onClick={() => {
               setSelectCreator("creatorOne");
-              context.setCreator("Full Send Podcast");
-              context.setPayment("https://buy.stripe.com/test_9AQbLbdhD8Y5eYM3cf")
-              context.setImage("https://yt3.googleusercontent.com/5_TYQJ-59yU45NoK1GpQcRuov8OgZuwuSiS-0X8IveZI3QK_tKaiQxx9BHGqVkGogD08zY-txA=s900-c-k-c0x00ffffff-no-rj")
+              context.setCreator(constants.creatorOne.name);
+              context.setPayment(constants.creatorOne.paymentLink)
+              context.setImage(constants.creatorOne.image)
             }}>
-              <CreatorCard name={"Full Send"} photo={full} link={`/video/PXPoKLPiSBM`} />
+              <CreatorCard name={constants.creatorOne.name} photo={constants.creatorOne.photo.full} link={`/video/${constants.creatorOne.video}`} />
             </div>
             <div className="w-96" onClick={() => {
               setSelectCreator("creatorTwo");
-              context.setCreator("David Dobrik");
-              context.setPayment("https://buy.stripe.com/test_9AQbLb4L7del4k89AC")
-              context.setImage("https://yt3.googleusercontent.com/ytc/AL5GRJULlbEP4MO2qjUSF3X8op4Errek_FlWpoXfbZfRmA=s176-c-k-c0x00ffffff-no-rj")
+              context.setCreator(constants.creatorTwo.name);
+              context.setPayment(constants.creatorTwo.paymentLink)
+              context.setImage(constants.creatorTwo.image)
             }}>
-              <CreatorCard name={"David Dobrik"} photo={david} link={`/video/cl4Fv61rBxw`} />
+              <CreatorCard name={constants.creatorTwo.name} photo={constants.creatorTwo.photo.david} link={`/video/${constants.creatorTwo.video}`} />
             </div>
           </div>
           <div className="overflow-x-hidden w-screen flex flex-row">
             <div className="w-96" onClick={() => {
               setSelectCreator("creatorThree");
-              context.setCreator("Charles Leclerc");
-              context.setPayment("https://buy.stripe.com/test_6oE8yZ0uRcahg2Q5kp")
-              context.setImage("https://yt3.ggpht.com/84C9HDPd3LR0C4M7tPqYmd6WvOCNFqVrXKyhDcxpyiuqmraVlNJp_tMWIijr6DI6YFLwOxjPNvo=s176-c-k-c0x00ffffff-no-rj-mo")
+              context.setCreator(constants.creatorThree.name);
+              context.setPayment(constants.creatorThree.paymentLink)
+              context.setImage(constants.creatorThree.image)
             }}>
-              <CreatorCard name={"Charles Leclerc"} photo={charles} link={`/video/3fK7HS-dEFg`} />
+              <CreatorCard name={constants.creatorThree.name} photo={constants.creatorThree.photo.charles} link={`/video/${constants.creatorThree.video}`} />
             </div>
             <div className="w-96" onClick={() => {
               setSelectCreator("creatorFour");
-              context.setCreator("FULL SEND MMA");
-              context.setPayment("https://buy.stripe.com/test_eVa2aB7Xj4HPg2Q6ou")
-              context.setImage("https://yt3.googleusercontent.com/DVtnT7dhsBtGqPYzmzTocgRsGe3Obf86n_hN2aq4zPZNk62tM13Y2CdK0eDe6UKaZwh_teR775c=s900-c-k-c0x00ffffff-no-rj")
+              context.setCreator(constants.creatorFour.name);
+              context.setPayment(constants.creatorFour.paymentLink)
+              context.setImage(constants.creatorFour.image)
             }}>
-              <CreatorCard name={"Full Send MMA"} photo={mma} link={`/video/aZYKKmZuy7I`} />
+              <CreatorCard name={constants.creatorFour.name} photo={constants.creatorFour.photo.mma} link={`/video/${constants.creatorFour.video}`} />
             </div>
           </div>
         </div>
@@ -64,38 +56,38 @@ export const CardSection = () => {
           <div className="overflow-x-hidden overflow-y-hidden w-screen flex flex-row">
             <div className="w-96" onClick={() => {
               setSelectCreator("creatorFive");
-              context.setCreator("Rich Roll");
-              context.setPayment("https://buy.stripe.com/test_28obLb4L74HP03S7sA")
-              context.setImage("https://yt3.googleusercontent.com/UXI7ZyoQPoHhboBBUD8pscuva2dd-hlTxMjRDHVg96eoHOfiru5CFoWvkVe8pFiyvlB33_ceow=s176-c-k-c0x00ffffff-no-rj")
+              context.setCreator(constants.creatorFive.name);
+              context.setPayment(constants.creatorFive.paymentLink)
+              context.setImage(constants.creatorFive.image)
             }}>
-              <CreatorCard name={"Rich Roll"} photo={rich} link={`/video/qLta9C3gekk`} />
+              <CreatorCard name={constants.creatorFive.name} photo={constants.creatorFive.photo.rich} link={`/video/${constants.creatorFive.video}`} />
             </div>
 
             <div className="w-96" onClick={() => {
               setSelectCreator("creatorSix");
-              context.setCreator("TED Talk");
-              context.setPayment("https://buy.stripe.com/test_3csaH7elH2zH3g4cMV")
-              context.setImage("https://yt3.googleusercontent.com/ytc/AL5GRJWBWUFdKzV57BCapp3zkk8ICiMB7fugor0iSHJ4-g=s176-c-k-c0x00ffffff-no-rj")
+              context.setCreator(constants.creatorSix.name);
+              context.setPayment(constants.creatorSix.paymentLink)
+              context.setImage(constants.creatorSix.image)
             }}>
-              <CreatorCard name={"TED Talk"} photo={ted} link={`/video/p3BJriWAJRw`} />
+              <CreatorCard name={constants.creatorSix.name} photo={constants.creatorSix.photo.ted} link={`/video/${constants.creatorSix.video}`} />
             </div>
           </div>
           <div className="overflow-x-hidden overflow-y-hidden w-screen flex flex-row">
             <div className="w-96" onClick={() => {
               setSelectCreator("creatorSeven");
-              context.setCreator("PowerfulJRE");
-              context.setPayment("https://buy.stripe.com/test_28o2aB2CZ6PX9EsfZ8")
-              context.setImage("https://yt3.googleusercontent.com/ytc/AL5GRJXxw6Z2O6R2LSeCbDFhcBITwJiVxR7-tFOW663eXg=s176-c-k-c0x00ffffff-no-rj")
+              context.setCreator(constants.creatorSeven.name);
+              context.setPayment(constants.creatorSeven.paymentLink)
+              context.setImage(constants.creatorSeven.image)
             }}>
-              <CreatorCard name={"Joe Rogan"} photo={rogan} link={`/video/Li-DZXySJQE`} />
+              <CreatorCard name={constants.creatorSeven.name} photo={constants.creatorSeven.photo.rogan} link={`/video/${constants.creatorSeven.video}`} />
             </div>
             <div className="w-96" onClick={() => {
               setSelectCreator("creatorEight");
-              context.setCreator("Lex Fridman");
-              context.setPayment("https://buy.stripe.com/test_6oE3eFelH8Y5g2Q00b")
-              context.setImage("https://yt3.googleusercontent.com/ytc/AL5GRJUDA5espVSAMXGuG8dAWDJJy_yb7RDQYw168-P_beA=s176-c-k-c0x00ffffff-no-rj")
+              context.setCreator(constants.creatorEight.name);
+              context.setPayment(constants.creatorEight.paymentLink)
+              context.setImage(constants.creatorEight.image)
             }}>
-              <CreatorCard name={"Lex Fridman"} photo={lex} link={`/video/x4nT1wEwy1Y`} />
+              <CreatorCard name={constants.creatorEight.name} photo={constants.creatorEight.photo.lex} link={`/video/${constants.creatorSeven.video}`} />
             </div>
           </div>
         </div>
