@@ -1,0 +1,19 @@
+import Link from "next/link";
+import lex from "public/lex.jpeg"
+import Image from "next/image";
+
+export const CreatorCard = (props:{name:string, photo:any, link:string})=>{
+    const {name, photo, link} = props;
+return(
+    <>
+            <Link href={link} className="flex items-center px-4 py-2  dark:hover:bg-gray-600 dark:hover:text-white">
+                <div className="relative transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110  duration-400">
+                  <Image width={"400"} height={"200"} className="mr-2 r" src={photo} alt="Jese image" />
+                  <div className="absolute bottom-1 opacity-75 bg-black w-full text-white font-semibold md:text-xl lg:text-3xl ">
+                    <span className=" bottom-4 md:ml-4 ">{name}</span>
+                  </div>
+                </div>
+              </Link>
+          </>
+)
+};
