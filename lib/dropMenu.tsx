@@ -4,7 +4,7 @@ import Image from "next/image";
 import CreatorContext from "src/context/CreatorContext";
 import fav from "public/favicon.ico"
 
-export const SearchBar = ()=>{
+export const SearchBar:any = ()=>{
 
 const [listOpen, setListOpen]= useState(false);
 const context = useContext(CreatorContext);

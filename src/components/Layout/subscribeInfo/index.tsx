@@ -6,8 +6,6 @@ import { useContext } from "react";
 export const Profile = () => {
 
     const context = useContext<any>(CreatorContext);
-    console.log("Value: ", context.creator)
-
     const title = context.creator;
     const paymentLink = context.payment;
     const imgUrl = context.image;
