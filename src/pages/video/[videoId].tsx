@@ -8,7 +8,7 @@ const Video = () => {
 
   const router = useRouter();
 
-  const [isSubscribe, setIsSubscribe] = useState(false);
+  const [isSubscribe, setIsSubscribe] = useState<boolean>(false);
 
   useEffect(() => {
     const handleSubscribe = async () => {

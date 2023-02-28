@@ -9,7 +9,7 @@ import mma from "public/mma.png"
 
 export const CreatorList = () => {
   const [listOpen, setListOpen] = useState(false);
-  const [selectCreator, setSelectCreator] = useState("creatorOne");
+  const [selectCreator, setSelectCreator] = useState<string>("creatorOne");
 
   useEffect(() => {
     getVideos(selectCreator)
