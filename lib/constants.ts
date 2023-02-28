@@ -1,11 +1,4 @@
-import full from "public/fullSendHd.jpg"
-import david from "public/davidIcon.jpeg"
-import charles from "public/charles.jpeg"
-import mma from "public/mma.png"
-import ted from "public/ted.jpeg"
-import rogan from "public/rogan.jpg"
-import rich from "public/rich.jpeg"
-import lex from "public/lex.jpeg"
+import { charles, full, david, mma, ted, rogan, rich, lex } from "public"
 
 export const constants = {
 "creatorOne":{
