@@ -6,5 +6,6 @@ import ted from "./ted.jpeg";
 import rogan from "public/rogan.jpg";
 import rich from "public/rich.jpeg";
 import lex from "public/lex.jpeg";
+import logo from "public/FClogo.jpg"
 
-export {charles, full, david, mma, ted, rogan, rich, lex,}
+export {charles, full, david, mma, ted, rogan, rich, lex, logo}

@@ -4,7 +4,7 @@ import { Burger } from "./burger"
 import { CreateUser } from "lib//userTag"
 import { LogoutFunc } from "lib/loginFunc"
 import Image from "next/image"
-import icon from "public/monster.png"
+import { logo } from "public"
 import { SearchBar } from "./search"
 
 export const Header: FC = () => {
@@ -19,7 +19,7 @@ export const Header: FC = () => {
           <div className="w-full flex flex-wrap items-center justify-between text-grey ">
             <div className="block ml-0 pr-2 lg:px-2 py-2 desktop-view">
               <Link href="/"
-              ><Image width={10} height={10} className="w-10 h-10 mr-2 rounded-full" src={icon} alt={""}></Image>
+              ><Image width={70} height={40} className="mr-2 overflow-hidden" src={logo} alt={""}></Image>
               </Link>
             </div>
             <div>

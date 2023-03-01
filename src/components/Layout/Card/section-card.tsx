@@ -1,10 +1,10 @@
 import { getVideos } from "lib/videos";
-import { useContext, useState } from "react";
+import { FC, useContext, useState } from "react";
 import { CreatorContext } from "src/context";
-import { CreatorCard } from "./creator-card";
+import {CreatorCard } from "./creator-card";
 import { constants } from "lib/constants";
 
-export const CardSection = () => {
+export const CardSection : FC = () => {
   const context = useContext(CreatorContext);
   const [selectCreator, setSelectCreator] = useState<string>("creatorOne");
   const creators = Object.entries(constants);
