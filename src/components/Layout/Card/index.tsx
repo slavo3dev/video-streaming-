@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export const Card = (props: { imgUrl: string, id: {} }) => {
-  const { imgUrl, id } = props;
+export const Card = (props: { imgUrl: string, id: {}, title: string }) => {
+  const { imgUrl, title, id } = props;
   const [imgSrc, setImgSrc] = useState(imgUrl);
 
   const handleErrorImage = () => {
@@ -19,6 +19,9 @@ export const Card = (props: { imgUrl: string, id: {} }) => {
         alt=""
         onError={handleErrorImage}
       />
+    <div className="bottom-1 opacity-75 bg-black pl-4 text-white font-semibold  ">
+                    <span className=" bottom-4">{title}</span>
+                  </div>
     </div>
   );
 };

@@ -51,12 +51,13 @@ export default function HomePage(): JSX.Element {
           video: {
             id: string
             imgUrl: string
+            title: string
           },
           idx: {},
         ) => {
           return (
             <Link href={`/video/${video.id}`} key={video.id + Math.random()}>
-              <Card id={idx} key={video.id} imgUrl={video.imgUrl} />
+              <Card id={idx} key={video.id} imgUrl={video.imgUrl} title={video.title}/>
             </Link>
           )
         },
@@ -74,12 +75,13 @@ export default function HomePage(): JSX.Element {
           video: {
             id: string
             imgUrl: string
+            title: string
           },
           idx: {},
         ) => {
           return (
             <Link href={`/video/${video.id}`} key={video.id + Math.random()}>
-              <Card id={idx} key={video.id} imgUrl={video.imgUrl} />
+              <Card id={idx} key={video.id} imgUrl={video.imgUrl} title={video.title}/>
             </Link>
           )
         },
@@ -97,12 +99,13 @@ export default function HomePage(): JSX.Element {
           video: {
             id: string
             imgUrl: string
+            title: string
           },
           idx: {},
         ) => {
           return (
             <Link href={`/video/${video.id}`} key={video.id + Math.floor(Math.random() * Date.now())}> 
-              <Card id={idx} key={video.id} imgUrl={video.imgUrl} />
+              <Card id={idx} key={video.id} imgUrl={video.imgUrl} title={video.title}/>
             </Link>
           )
         },
