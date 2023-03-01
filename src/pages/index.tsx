@@ -8,9 +8,9 @@ import { constants } from "lib/constants";
 
 export default function HomePage() {
 
-  let creatorData1 = getVideos("creatorOne");
-  let creatorData2 = getVideos("creatorTwo");
-  let creatorData3 = getVideos("creatorSeven");
+  let subscribedVideos = getVideos("creatorOne");
+  let newVideos = getVideos("creatorTwo");
+  let popularVideos = getVideos("creatorSeven");
 
   const context = useContext(CreatorContext)
   const [auth, setAuth] = useState<string | boolean>("loading")
@@ -34,7 +34,7 @@ export default function HomePage() {
         context.setPayment(constants.creatorOne.paymentLink);
         context.setImage(constants.creatorOne.image)
       }} >
-      {creatorData1.map((video: {
+      {subscribedVideos.map((video: {
         id: string; imgUrl: string;
       }, idx: {}) => {
         return <Link href={`/video/${video.id}`} key={video.id + Math.random()}><Card id={idx} key={video.id} imgUrl={video.imgUrl} /></Link>;
@@ -50,7 +50,7 @@ export default function HomePage() {
         context.setImage(constants.creatorTwo.image);
       }}
     >
-      {creatorData2.map((video: {
+      {newVideos.map((video: {
         id: string; imgUrl: string;
       }, idx: {}) => {
         return <Link href={`/video/${video.id}`} key={video.id + Math.random()}><Card id={idx} key={video.id} imgUrl={video.imgUrl} /></Link>;
@@ -65,7 +65,7 @@ export default function HomePage() {
         context.setPayment(constants.creatorSeven.paymentLink)
         context.setImage(constants.creatorSeven.image)
       }}>
-      {creatorData3.map((video: {
+      {popularVideos.map((video: {
         id: string; imgUrl: string;
       }, idx: {}) => {
         return <Link href={`/video/${video.id}`} key={video.id + Math.random()}><Card id={idx} key={video.id} imgUrl={video.imgUrl} /></Link>;

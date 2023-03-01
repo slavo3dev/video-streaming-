@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { useRouter } from "next/router";
 import { Profile } from "src/components";
 import { getVideos } from 'lib/videos';
@@ -8,30 +7,7 @@ const Video = () => {
 
   const router = useRouter();
 
-  const [isSubscribe, setIsSubscribe] = useState<boolean>(false);
-
-  useEffect(() => {
-    const handleSubscribe = async () => {
-
-      try {
-        const sub = true;
-        if (sub) {
-          setIsSubscribe(true);
-        }
-        else {
-          setIsSubscribe(false);
-        }
-      }
-      catch (error) {
-        console.log("Error", error)
-      }
-    }
-    handleSubscribe()
-  }, [isSubscribe]
-  )
-
-  let url = isSubscribe ? `https://www.youtube.com/embed/${router.query.videoId}?origin=http://example.com&controls=0&rel=0&&disablekb=1&autoplay=1&modestbranding=1&start=10&end=23`
-    : `https://www.youtube.com/embed/${router.query.videoId}?origin=http://example.com&controls=1&rel=0&disablekb=1&modestbranding=1`;
+  let url =  `https://www.youtube.com/embed/${router.query.videoId}?origin=http://example.com&controls=0&rel=0&&disablekb=1&autoplay=1&modestbranding=1&start=10&end=23`;
 
   return (
     <div className="w-full h-screen flex-col p-6 px-10 overflow-sroll">

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import Link from "next/link";
 import { getVideos } from "lib/videos";
 import Image from "next/image";
@@ -7,7 +7,7 @@ import david from "public/david.jpeg"
 import charles from "public/charles.jpeg"
 import mma from "public/mma.png"
 
-export const CreatorList = () => {
+export const CreatorList : FC = () => {
   const [listOpen, setListOpen] = useState(false);
   const [selectCreator, setSelectCreator] = useState<string>("creatorOne");
 

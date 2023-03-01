@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CreatorContext } from "src/context";
-import { useContext } from "react";
+import { FC, useContext } from "react";
 
-export const Profile = () => {
+export const Profile : FC = () => {
 
     const context = useContext<any>(CreatorContext);
     const title = context.creator;
