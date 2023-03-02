@@ -6,10 +6,15 @@ import Link from "next/link"
 import { CreatorContext } from "src/context"
 import { constants } from "lib/constants"
 
+type VideoType = {
+            id: string
+            imgUrl: string
+            title: string
+}
 export default function HomePage(): JSX.Element {
-  let subscribedVideos = getVideos("creatorOne")
-  let newVideos = getVideos("creatorTwo")
-  let popularVideos = getVideos("creatorSeven")
+  let subscribedVideos:VideoType[] = getVideos("creatorOne")
+  let newVideos:VideoType[] = getVideos("creatorTwo")
+  let popularVideos:VideoType[] = getVideos("creatorSeven")
 
   function handleSubscribedVideos() {
     context.setCreator(constants.creatorOne.name)

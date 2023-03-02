@@ -20,7 +20,7 @@ export const Card = (props: { imgUrl: string, id: {}, title: string }) => {
         onError={handleErrorImage}
       />
     <div className="bottom-1 opacity-75 bg-black pl-4 text-white font-semibold  ">
-                    <span className=" bottom-4">{title}</span>
+                    <span className=" bottom-4 text-white font-normal w-5/6 sm:w-96 ">{title}</span>
                   </div>
     </div>
   );
