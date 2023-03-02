@@ -1,13 +1,20 @@
 import { useRouter } from "next/router";
-import { Profile } from "src/components";
+import { Card, Profile } from "src/components";
 import { getVideos } from 'lib/videos';
 import { logo } from "public";
 import Link from "next/link";
 import Image from "next/image";
+import { CreatorContext } from "src/context";
+import { useContext } from "react";
 
 
-const creatorData = getVideos('creatorOne');
+
 const Video = () => {
+
+  const context = useContext<any>(CreatorContext);
+  const selectVideos = context.state;
+  const creatorVideos = getVideos(selectVideos);
+
 
   const router = useRouter();
 {logo}
@@ -36,6 +43,24 @@ const Video = () => {
       </div>
       <div className="pb-8">
         <Profile />
+      </div>
+      <div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ">
+        {creatorVideos.map(
+        (
+          video: {
+            id: string
+            imgUrl: string
+            title: string
+          },
+          idx: {},
+        ) => {
+          return (
+            <Link href={`/video/${video.id}`} key={video.id + Math.random()}>
+              <Card id={idx} key={video.id} imgUrl={video.imgUrl} title={video.title}/>
+            </Link>
+          )
+        },
+      )}
       </div>
     </div>
   );
