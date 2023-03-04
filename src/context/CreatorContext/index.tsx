@@ -1,19 +1,11 @@
 import { createContext } from 'react';
+import { creatorContextType } from 'lib/types';
 
 
-interface CreatorContextType {
-  creator: string;
-  setCreator: (creator: string) => void;
-  state: string;
-  setState: (state: string) => void;
-  payment: string;
-  setPayment: (payment: string) => void;
-  image: string;
-  setImage: (image: string) => void;
-}
 
 
-const CreatorContext = createContext<CreatorContextType >({
+
+const CreatorContext = createContext<creatorContextType >({
     creator: '',
     setCreator: function (creator: string): void {
         throw new Error('Error');

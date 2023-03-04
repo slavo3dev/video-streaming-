@@ -5,7 +5,7 @@ import { FC, useContext } from "react";
 
 export const Profile : FC = () => {
 
-    const context = useContext<any>(CreatorContext);
+    const context = useContext(CreatorContext);
     const title = context.creator;
     const paymentLink = context.payment;
     const imgUrl = context.image;
