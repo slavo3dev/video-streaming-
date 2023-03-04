@@ -1,8 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { propsType } from "lib/types";
+import { FC } from "react";
 
-export const CreatorCard = (props:{name:string, photo:any, link:string})=>{
-    const {name, photo, link} = props;
+export const CreatorCard: FC<propsType> = ({name, photo, link})=>{
+
 return(
     <>
             <Link href={link} className="flex items-center px-4 py-2  dark:hover:bg-gray-600 dark:hover:text-white">
@@ -15,4 +17,5 @@ return(
               </Link>
           </>
 )
+
 };

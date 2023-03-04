@@ -4,7 +4,8 @@ import { useState } from "react";
 import { CreatorContext } from "src/context";
 
 
-export default function App({ Component, pageProps }: AppProps) {
+
+export default function App({ Component, pageProps }:AppProps):JSX.Element {
  
 const [creator, setCreator] = useState<string>("Full Send Podcast")
 const [state, setState] = useState<string>("creatorOne")

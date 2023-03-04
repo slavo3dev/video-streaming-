@@ -17,16 +17,19 @@ export default function HomePage(): JSX.Element {
   let popularVideos:VideoType[] = getVideos("creatorSeven")
 
   function handleSubscribedVideos() {
+    context.setState(constants.creatorOne.state)
     context.setCreator(constants.creatorOne.name)
     context.setPayment(constants.creatorOne.paymentLink)
     context.setImage(constants.creatorOne.image)
   }
   function handleNewVideos() {
+    context.setState(constants.creatorTwo.state)
     context.setCreator(constants.creatorTwo.name)
     context.setPayment(constants.creatorTwo.paymentLink)
     context.setImage(constants.creatorTwo.image)
   }
   function handlePopularVideos() {
+    context.setState(constants.creatorSeven.state)
     context.setCreator(constants.creatorSeven.name)
     context.setPayment(constants.creatorSeven.paymentLink)
     context.setImage(constants.creatorSeven.image)
