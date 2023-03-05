@@ -1,10 +1,11 @@
+import { StaticImageData } from "next/image";
+
 export type propsType ={ 
   name: string,
-  photo:string,
+  photo:string  | StaticImageData,
   link:string
 }
 export type creatorContextType ={
-
 
   creator: string;
   setCreator: (creator: string) => void;
@@ -14,6 +15,4 @@ export type creatorContextType ={
   setPayment: (payment: string) => void;
   image: string;
   setImage: (image: string) => void;
-
-
 }

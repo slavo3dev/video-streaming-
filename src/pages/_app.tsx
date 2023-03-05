@@ -3,8 +3,6 @@ import type { AppProps } from "next/app";
 import { useState } from "react";
 import { CreatorContext } from "src/context";
 
-
-
 export default function App({ Component, pageProps }:AppProps):JSX.Element {
  
 const [creator, setCreator] = useState("Full Send Podcast")
