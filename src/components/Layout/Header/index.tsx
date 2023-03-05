@@ -5,7 +5,7 @@ import { CreateUser } from "lib//userTag"
 import { LogoutFunc } from "lib/loginFunc"
 import Image from "next/image"
 import { logo } from "public"
-import { SearchBar } from "./search"
+
 
 export const Header: FC = () => {
 
@@ -59,8 +59,6 @@ export const Header: FC = () => {
                 </ul>
               </div>
             </div>
-            {/* <div className="desktop-view">
-              <SearchBar /></div> */}
             <div className="desktop-view text-sky-500" >
               <CreateUser />
             </div>
