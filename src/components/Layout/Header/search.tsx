@@ -57,6 +57,7 @@ export const SearchBar = () => {
                   context.setCreator(creator.name)
                   context.setPayment(creator.paymentLink)
                   context.setImage(creator.image)
+                  context.setSubscription(creator.subscription)
                 }}
               >
                 <Link href={`/video/${creator.video}`}>{creator.name} </Link>

@@ -8,7 +8,31 @@ export const Profile: FC = () => {
   const title = context.creator
   const paymentLink = context.payment
   const imgUrl = context.image
-  const subscription = context.subscription
+  const isSubscribed = context.subscription
+
+  const subButton = isSubscribed ?
+        <div className="mt-12 sm:ml-8 ">
+          <h1 className="text-sky-500 text-2xl font-bold">{title}</h1>
+          <div
+            className="bg-sky-500 hover:bg-blue-700 text-white font-bold flex space-x-2 justify-center py-1 px-4 rounded-full w-44 active:bg-blue-800"
+          >
+            Subscribed
+          </div>
+          <div className="text-sky-500 text-2xl font-bold"></div>
+        </div>
+        :
+        <div className="mt-12 sm:ml-8 ">
+          <h1 className="text-sky-500 text-2xl font-bold">{title}</h1>
+          <Link
+            className="bg-sky-500 hover:bg-blue-700 text-white font-bold flex space-x-2 justify-center py-1 px-4 rounded-full w-44 active:bg-blue-800"
+            href={paymentLink}
+          >
+            Subscribe
+          </Link>
+          <div className="text-sky-500 text-2xl font-bold"></div>
+        </div>;
+
+  
 
   return (
     <div>
@@ -25,16 +49,7 @@ export const Profile: FC = () => {
             alt={""}
           ></Image>
         </div>
-        <div className="mt-12 sm:ml-8 ">
-          <h1 className="text-sky-500 text-2xl font-bold">{title}</h1>
-          <Link
-            className="bg-sky-500 hover:bg-blue-700 text-white font-bold flex space-x-2 justify-center py-1 px-4 rounded-full w-44 active:bg-blue-800"
-            href={paymentLink}
-          >
-            Subscribe
-          </Link>
-          <div className="text-sky-500 text-2xl font-bold"></div>
-        </div>
+          <div >{subButton}</div> 
       </div>
       <div className="text-base font-normal w-5/6 sm:w-96 text-stone-400">
         Lorem Ipsum is simply dummy text of the printing and typesetting
