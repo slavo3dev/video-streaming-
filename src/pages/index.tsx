@@ -7,32 +7,35 @@ import { CreatorContext } from "src/context"
 import { constants } from "lib/constants"
 
 type VideoType = {
-            id: string
-            imgUrl: string
-            title: string
+  id: string
+  imgUrl: string
+  title: string
 }
 export default function HomePage(): JSX.Element {
-  let subscribedVideos:VideoType[] = getVideos("creatorOne")
-  let newVideos:VideoType[] = getVideos("creatorTwo")
-  let popularVideos:VideoType[] = getVideos("creatorSeven")
+  let subscribedVideos: VideoType[] = getVideos("creatorOne")
+  let newVideos: VideoType[] = getVideos("creatorTwo")
+  let popularVideos: VideoType[] = getVideos("creatorSeven")
 
   function handleSubscribedVideos() {
     context.setState(constants.creatorOne.state)
     context.setCreator(constants.creatorOne.name)
     context.setPayment(constants.creatorOne.paymentLink)
     context.setImage(constants.creatorOne.image)
+    context.setSubscription(constants.creatorOne.subscription)
   }
   function handleNewVideos() {
     context.setState(constants.creatorTwo.state)
     context.setCreator(constants.creatorTwo.name)
     context.setPayment(constants.creatorTwo.paymentLink)
     context.setImage(constants.creatorTwo.image)
+    context.setSubscription(constants.creatorTwo.subscription)
   }
   function handlePopularVideos() {
     context.setState(constants.creatorSeven.state)
     context.setCreator(constants.creatorSeven.name)
     context.setPayment(constants.creatorSeven.paymentLink)
     context.setImage(constants.creatorSeven.image)
+    context.setSubscription(constants.creatorSeven.subscription)
   }
   const context = useContext(CreatorContext)
   const [auth, setAuth] = useState<string | boolean>("loading")
@@ -65,7 +68,12 @@ export default function HomePage(): JSX.Element {
         ) => {
           return (
             <Link href={`/video/${video.id}`} key={video.id + Math.random()}>
-              <Card id={idx} key={video.id} imgUrl={video.imgUrl} title={video.title}/>
+              <Card
+                id={idx}
+                key={video.id}
+                imgUrl={video.imgUrl}
+                title={video.title}
+              />
             </Link>
           )
         },
@@ -89,7 +97,12 @@ export default function HomePage(): JSX.Element {
         ) => {
           return (
             <Link href={`/video/${video.id}`} key={video.id + Math.random()}>
-              <Card id={idx} key={video.id} imgUrl={video.imgUrl} title={video.title}/>
+              <Card
+                id={idx}
+                key={video.id}
+                imgUrl={video.imgUrl}
+                title={video.title}
+              />
             </Link>
           )
         },
@@ -112,8 +125,16 @@ export default function HomePage(): JSX.Element {
           idx: {},
         ) => {
           return (
-            <Link href={`/video/${video.id}`} key={video.id + Math.floor(Math.random() * Date.now())}> 
-              <Card id={idx} key={video.id} imgUrl={video.imgUrl} title={video.title}/>
+            <Link
+              href={`/video/${video.id}`}
+              key={video.id + Math.floor(Math.random() * Date.now())}
+            >
+              <Card
+                id={idx}
+                key={video.id}
+                imgUrl={video.imgUrl}
+                title={video.title}
+              />
             </Link>
           )
         },
@@ -145,4 +166,4 @@ export default function HomePage(): JSX.Element {
   let Spinning = <Spinner />
 
   return auth === "loading" ? Spinning : auth ? homePage : LoginUser
-};
+}
