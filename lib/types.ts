@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image"
 
-export type propsType = {
+export type creatorCardProps = {
   name: string
   photo: string | StaticImageData
   link: string
@@ -17,3 +17,18 @@ export type creatorContextType = {
   subscription: boolean
   setSubscription: (subscription: boolean) => void
 }
+export 
+ type CreatorType={
+  state:string,
+  name:string,
+  image:string,
+  paymentLink:string,
+  video:string,
+  photo:string,
+  subscription: boolean,
+}
+export type getVideosType = (creator: string)=>{
+imgUrl: string,
+title: string,
+id: string 
+}[];

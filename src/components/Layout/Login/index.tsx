@@ -3,8 +3,6 @@ import { useState } from "react";
 import { magic } from "lib/magic-client";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { logo } from "public";
-
 export const Login: FC = () => {
 
   const router = useRouter();
@@ -37,7 +35,7 @@ export const Login: FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
 
-      <Image className="center m-0 absolute top-1/4 left-2/4" width={400} height={300}src={logo} alt={""}></Image>
+      <Image className="center m-0 absolute top-1/4 left-2/4" width={400} height={300}src={"/../public/FClogo.jpg"} alt={"FC Logo"}></Image>
       <div className="center m-0 absolute top-3/4 left-2/4">
 
         <form className=" w-80 items-start h-64 p-8 justify-start rounded-md text-left flex flex-col  showcase-content relative">

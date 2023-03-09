@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import type { propsType } from "lib/types";
+import type { creatorCardProps } from "lib/types";
 import { FC } from "react";
 
-export const CreatorCard: FC<propsType> = ({name, photo, link})=>{
+export const CreatorCard: FC<creatorCardProps> = ({name, photo, link})=>{
 
 return(
     <>

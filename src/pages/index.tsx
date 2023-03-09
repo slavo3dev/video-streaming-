@@ -11,7 +11,7 @@ type VideoType = {
   imgUrl: string
   title: string
 }
-export default function HomePage(): JSX.Element {
+  const Homepage=()=> {
   let subscribedVideos: VideoType[] = getVideos("creatorOne")
   let newVideos: VideoType[] = getVideos("creatorTwo")
   let popularVideos: VideoType[] = getVideos("creatorSeven")
@@ -167,3 +167,4 @@ export default function HomePage(): JSX.Element {
 
   return auth === "loading" ? Spinning : auth ? homePage : LoginUser
 }
+export default Homepage;

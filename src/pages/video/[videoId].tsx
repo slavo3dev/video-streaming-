@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import { Card, Profile } from "src/components"
 import { getVideos } from "lib/videos"
-import { logo } from "public"
+import  logo  from "public/FClogo.jpg"
 import Link from "next/link"
 import Image from "next/image"
 import { CreatorContext } from "src/context"
@@ -31,7 +31,7 @@ const Video = () => {
             height={40}
             className="mr-2 overflow-hidden"
             src={logo}
-            alt={""}
+            alt={"FC Logo"}
           ></Image>
         </Link>
       </div>
@@ -60,7 +60,7 @@ const Video = () => {
         {creatorVideos.map(
           (
             video: {
-              id: string
+              id: string 
               imgUrl: string
               title: string
             },

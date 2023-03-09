@@ -4,7 +4,6 @@ import { Burger } from "./burger"
 import { CreateUser } from "lib//userTag"
 import { LogoutFunc } from "lib/loginFunc"
 import Image from "next/image"
-import { logo } from "public"
 import { SearchBar } from "./search"
 
 export const Header: FC = () => {
@@ -13,8 +12,7 @@ export const Header: FC = () => {
       <div className="mobile-view text-white flex-col">
         <CreateUser />
         <span className="text-black">
-          {" "}
-          <SearchBar />{" "}
+          <SearchBar />
         </span>
       </div>
       <div className="flex items-center py-4 mx-auto justify-between w-full">
@@ -26,8 +24,8 @@ export const Header: FC = () => {
                   width={70}
                   height={40}
                   className="mr-2 overflow-hidden"
-                  src={logo}
-                  alt={""}
+                  src={"/../public/FClogo.jpg"}
+                  alt={"FC logo"}
                 ></Image>
               </Link>
             </div>
@@ -73,7 +71,7 @@ export const Header: FC = () => {
               </div>
             </div>
             <div className="desktop-view">
-              <SearchBar />{" "}
+              <SearchBar />
             </div>
             <div className="desktop-view text-sky-500">
               <CreateUser />

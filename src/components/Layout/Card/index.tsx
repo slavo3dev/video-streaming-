@@ -16,7 +16,7 @@ export const Card = (props: { imgUrl: string, id: {}, title: string }) => {
         src={imgSrc || 'https://images.unsplash.com/photo-1485846234645-a62644f84728?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1340&q=8'}
         width={"600"}
         height={"400"}
-        alt=""
+        alt={"Video Image"}
         onError={handleErrorImage}
       />
     <div className="bottom-1 opacity-75 bg-black pl-4 text-white font-semibold  ">
