@@ -5,13 +5,10 @@ import { getVideos } from "lib/videos"
 import Link from "next/link"
 import { CreatorContext } from "src/context"
 import { constants } from "lib/constants"
+import type { VideoType } from "lib/types"
 
-type VideoType = {
-  id: string
-  imgUrl: string
-  title: string
-}
-  const Homepage=()=> {
+
+  const Homepage = ()=> {
   let subscribedVideos: VideoType[] = getVideos("creatorOne")
   let newVideos: VideoType[] = getVideos("creatorTwo")
   let popularVideos: VideoType[] = getVideos("creatorSeven")

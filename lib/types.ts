@@ -17,8 +17,7 @@ export type creatorContextType = {
   subscription: boolean
   setSubscription: (subscription: boolean) => void
 }
-export 
- type CreatorType={
+export type CreatorType={
   state:string,
   name:string,
   image:string,
@@ -32,3 +31,13 @@ imgUrl: string,
 title: string,
 id: string 
 }[];
+export type cardPropsType ={
+  imgUrl:string,
+  id:{},
+  title:string
+}
+export type VideoType = {
+  id: string
+  imgUrl: string
+  title: string
+}

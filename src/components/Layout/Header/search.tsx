@@ -2,11 +2,12 @@ import { SetStateAction, useState, useContext } from "react"
 import { constants } from "lib/constants"
 import { CreatorContext } from "src/context"
 import Link from "next/link"
+import { CreatorType } from "lib/types"
 
-export const SearchBar = () => {
+export const SearchBar = ():JSX.Element => {
   const context = useContext(CreatorContext)
   const [searchInput, setSearchInput] = useState<string>("")
-  const creators = Object.entries(constants)
+  const creators:[string,CreatorType][] = Object.entries(constants)
 
   const handleInput = (e: {
     preventDefault: () => void
