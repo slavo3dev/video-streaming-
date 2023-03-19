@@ -5,4 +5,6 @@ import { Card } from "src/components/Layout/Card/index"
 import { CardSection } from "src/components/Layout/Card/section-card"
 import { Spinner } from "./Spinner/spinner"
 import { Profile } from "./subscribeInfo"
-export { Footer, Header, Login, Card, CardSection, Spinner, Profile }
+import { VideoLine } from "./VideosLine"
+
+export { Footer, Header, Login, Card, CardSection, Spinner, Profile, VideoLine}
