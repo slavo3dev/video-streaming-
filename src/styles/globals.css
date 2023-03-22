@@ -35,6 +35,9 @@ font-style: normal;
 font-weight: 600;
 font-size: 14px;
 line-height: 125.5%;
+}
+.background-gradient{
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 52.91%, #000000 100%);
 } 
 .showcase-content {
   z-index: 2;

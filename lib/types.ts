@@ -4,6 +4,7 @@ export type creatorCardProps = {
   name: string
   photo: string | StaticImageData
   link: string
+  avatar: string | StaticImageData
 }
 export type creatorContextType = {
   creator: string

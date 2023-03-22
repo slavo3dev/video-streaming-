@@ -23,7 +23,7 @@ export const VideoLine: FC = () => {
 
   let videoSection3 = PopularSectionLine()
   return (
-    <div className="pl-16 pt-8 ">
+    <div className="pl-14  pt-8 ">
        
       <h1 className="text-3xl  ml-6 font-bold font-family-jakarta text-black">
         Your Videos
