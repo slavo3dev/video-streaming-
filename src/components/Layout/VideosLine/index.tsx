@@ -23,20 +23,23 @@ export const VideoLine: FC = () => {
 
   let videoSection3 = PopularSectionLine()
   return (
-    <div>
-      <h1 className="text-4xl  pt-3 ml-6 font-bold text-blue-500">
+    <div className="pl-16 pt-8 ">
+       
+      <h1 className="text-3xl  ml-6 font-bold font-family-jakarta text-black">
         Your Videos
       </h1>
-      <div className="overflow-scroll">
+      
+          <div className="overflow-scroll" >
       {videoSection1}
-      </div>
-      <h1 className="text-4xl  pt-3 ml-6 font-bold text-blue-500">
+     </div>
+    
+      <h1 className="text-3xl  pb-4 ml-6 font-bold font-family-jakarta text-black">
         New Videos
       </h1>
       <div className="overflow-scroll">
       {videoSection2}
       </div>
-      <h1 className="text-4xl  pt-3 ml-6 font-bold text-blue-500">Other</h1>
+      <h1 className="text-3xl pb-4  ml-6 font-bold font-family-jakarta text-black">Other</h1>
       <div className="overflow-scroll">
       {videoSection3}
       </div>

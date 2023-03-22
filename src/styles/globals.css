@@ -1,7 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500&display=swap');
 
+body, html {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
 html,
 body {
   padding: 0;
@@ -19,6 +25,17 @@ body {
 .login-button {
   width: 420px;
 }
+
+.font-family-jakarta{
+   font-family: 'Plus Jakarta Sans', sans-serif;   
+}
+.title-font{
+font-family: 'Plus Jakarta Sans', sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 125.5%;
+} 
 .showcase-content {
   z-index: 2;
   background: rgb(0, 0, 0, 0.65);

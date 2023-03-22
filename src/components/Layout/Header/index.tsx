@@ -8,7 +8,7 @@ import { SearchBar } from "./search"
 
 export const Header: FC = () => {
   return (
-    <header className="header flex w-full items-center  from-black justify-between pt-6 pb-6 h-20 z-10">
+    <header className="header flex w-full items-center bg-white from-black justify-between pt-6 pb-6 h-20 z-10">
       <div className="mobile-view text-white flex-col">
         <CreateUser />
         <span className="text-black">
@@ -38,7 +38,7 @@ export const Header: FC = () => {
             <div className="flex ">
               <div className="desktop-view flex justify-between mx-auto">
                 <div>
-                  <ul className="navbar-nav font-normal text-black mr-auto flex flex-row">
+                  <ul className="navbar-nav font-normal font-family-jakarta text-black mr-auto flex flex-row">
                     <li className="nav-item hover:bg-sky-300">
                       <Link
                         className="nav-link block pr-2 lg:px-2 py-2  transition duration-150 ease-in-out"

@@ -19,7 +19,7 @@ export const SubscribedSectionLine: any = () => {
 
   return (
     <div
-      className="overflow-x-scroll w-screen flex flex-row"
+      className="overflow-x-scroll w-screen  flex flex-row"
       onClick={() => subscribedContent()}
     >
       {subscribedVideos.map(
@@ -61,7 +61,7 @@ export const NewSectionLine = () => {
 
   return (
     <div
-      className="overflow-x-scroll w-screen flex flex-row"
+      className="overflow-x-scroll w-screen  flex flex-row"
       onClick={() => newContent()}
     >
       {newVideos.map(
@@ -101,7 +101,7 @@ export const PopularSectionLine = () => {
   const context = useContext(CreatorContext)
   return (
     <div
-      className="overflow-x-scroll w-screen flex flex-row"
+      className="overflow-x-scroll w-screen  flex flex-row"
       onClick={() => popularContent()}
     >
       {popularVideos.map(
