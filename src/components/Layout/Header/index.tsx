@@ -34,7 +34,6 @@ export const Header: FC = () => {
                 <SearchBar />
               </div>
             </div>
-
             <div className="flex ">
               <div className="desktop-view flex justify-between mx-auto">
                 <div>
@@ -77,12 +76,10 @@ export const Header: FC = () => {
                   </ul>
                 </div>
               </div>
-
               <div className="desktop-view pr-16 text-black font-normal pt-2 ml-4 ">
                 <CreateUser />
               </div>
             </div>
-
             <Burger />
           </div>
         </nav>
