@@ -65,7 +65,7 @@ export default function Settings() {
                 </svg>
                 <Link
                   href={
-                    "https://billing.stripe.com/p/login/test_5kAdUk4iN5g05l6000"
+                    ""
                   }
                 >
                   <p className="pl-2 pt-4">Change Password</p>

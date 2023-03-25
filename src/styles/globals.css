@@ -19,6 +19,10 @@ body {
 .mobile-view {
   display: none;
 }
+.player{
+  
+  z-index: 1;
+}
 .login-input {
   width: 420px;
   height: 62px;
