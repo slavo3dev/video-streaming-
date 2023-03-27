@@ -19,7 +19,7 @@ export const SubscribedSectionLine: any = () => {
 
   return (
     <div
-      className="overflow-x-scroll w-screen  flex flex-row"
+      className="overflow-x-scroll w-screen flex flex-row"
       onClick={() => subscribedContent()}
     >
       {subscribedVideos.map(
@@ -28,16 +28,18 @@ export const SubscribedSectionLine: any = () => {
             id: string
             imgUrl: string
             title: string
+            channelName: string
           },
           idx: {},
         ) => {
           return (
             <Link href={`/video/${video.id}`} key={video.id + Math.random()}>
               <Card
-                id={idx}
-                key={video.id}
-                imgUrl={video.imgUrl}
-                title={video.title}
+                 id={idx}
+                  key={video.id}
+                  imgUrl={video.imgUrl}
+                  title={video.title}
+                  name={video.channelName}
               />
             </Link>
           )
@@ -70,17 +72,18 @@ export const NewSectionLine = () => {
             id: string
             imgUrl: string
             title: string
+            channelName: string
           },
           idx: {},
         ) => {
           return (
             <Link href={`/video/${video.id}`} key={video.id + Math.random()}>
               <Card
-                id={idx}
-                key={video.id}
-                imgUrl={video.imgUrl}
-                title={video.title}
-              />
+                 id={idx}
+                  key={video.id}
+                  imgUrl={video.imgUrl}
+                  title={video.title}
+                  name={video.channelName}           />
             </Link>
           )
         },
@@ -110,6 +113,8 @@ export const PopularSectionLine = () => {
             id: string
             imgUrl: string
             title: string
+            channelName:string
+            
           },
           idx: {},
         ) => {
@@ -119,10 +124,11 @@ export const PopularSectionLine = () => {
               key={video.id + Math.floor(Math.random() * Date.now())}
             >
               <Card
-                id={idx}
-                key={video.id}
-                imgUrl={video.imgUrl}
-                title={video.title}
+                 id={idx}
+                  key={video.id}
+                  imgUrl={video.imgUrl}
+                  title={video.title}
+                  name={video.channelName}
               />
             </Link>
           )

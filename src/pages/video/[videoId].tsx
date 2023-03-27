@@ -1,13 +1,32 @@
 import { useRouter } from "next/router"
-import { Card, Profile } from "src/components"
+import { Card, Login, Profile, Spinner } from "src/components"
 import { getVideos } from "lib/videos"
 import  logo  from "public/FClogo.jpg"
 import Link from "next/link"
 import { CreatorContext } from "src/context"
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Header } from "src/components"
+import { magic } from "lib/magic-client"
 
 const Video = () => {
+
+const [auth, setAuth] = useState<string | boolean>("loading")
+
+  useEffect(() => {
+    const handleLoggedIn = async () => {
+      const isLoggedIn = await magic.user.isLoggedIn();
+      if (isLoggedIn) {
+        setAuth(true)
+      } else {
+        setAuth(false)
+      }
+    }
+    handleLoggedIn();
+  }, [auth]);
+
+
+
+
   const context = useContext<any>(CreatorContext)
   const selectVideos = context.state
   const creatorVideos = getVideos(selectVideos)
@@ -22,7 +41,7 @@ const Video = () => {
     ? `https://www.youtube.com/embed/${router.query.videoId}?origin=http://example.com&controls=1&rel=0&disablekb=1&modestbranding=1`
     : `https://www.youtube.com/embed/${router.query.videoId}?origin=http://example.com&controls=0&rel=0&&disablekb=1&autoplay=1&modestbranding=1&start=10&end=23`
 
-  return (
+  let VideoPage = (
 
 
     <>
@@ -49,6 +68,7 @@ const Video = () => {
               id: string 
               imgUrl: string
               title: string
+              channelName: string
             },
             idx: {},
           ) => {
@@ -59,7 +79,9 @@ const Video = () => {
                   key={video.id}
                   imgUrl={video.imgUrl}
                   title={video.title}
+                  name={video.channelName}
                 />
+                
               </Link>
             )
           },
@@ -68,5 +90,17 @@ const Video = () => {
     </div>
     </>
   )
+ let LoginUser = (
+    <div><Login /> </div>
+  )
+  let Spinning = (
+    <Spinner />
+  )
+return auth === 'loading' ? Spinning : auth ? VideoPage : LoginUser
+
+
+
+
+
 }
 export default Video

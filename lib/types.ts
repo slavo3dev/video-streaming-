@@ -30,15 +30,19 @@ export type CreatorType={
 export type getVideosType = (creator: string)=>{
 imgUrl: string,
 title: string,
-id: string 
+id: string ,
+channelName: string,
+
 }[];
 export type cardPropsType ={
   imgUrl:string,
   id:{},
   title:string
+  name:string;
 }
 export type VideoType = {
   id: string
   imgUrl: string
   title: string
+  channelName:string
 }

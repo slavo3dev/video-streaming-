@@ -1,8 +1,10 @@
 import Image from "next/image"
-import { FC, useState } from "react"
+import { FC, useState, useContext } from "react"
 import type { cardPropsType } from "lib/types"
+import { CreatorContext } from "src/context"
 
-export const Card: FC<cardPropsType> = ({ imgUrl, title, id }) => {
+
+export const Card: FC<cardPropsType> = ({ imgUrl, title, id, name }) => {
   const [imgSrc, setImgSrc] = useState(imgUrl)
   const handleErrorImage = () => {
     setImgSrc(
@@ -28,7 +30,7 @@ export const Card: FC<cardPropsType> = ({ imgUrl, title, id }) => {
       <div className="bottom-1 bg-white opacity-75 border rounded-b-xl pl-4 text-black font-semibold  ">
         <span className=" bottom-4  title-font w-5/6 sm:w-96 ">
           {title}
-        </span>
+        </span><h1 className="text-slate-400">{name}</h1>
       </div>
     </div>
    

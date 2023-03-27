@@ -14,14 +14,17 @@ export const getVideos: getVideosType = (creator: string) => {
   return data[creatorType as keyof ObjectVideoType].items.map(
     (item: {
       id: any
-      snippet: { thumbnails: { high: { url: string } }; title: string }
+      snippet: { thumbnails: { high: { url: string } }; title: string ; channelTitle: string }
     }) => {
       //maping through data in order to acces same values for every object in array
       return {
         imgUrl: item.snippet.thumbnails.high.url,
         title: item.snippet.title,
         id: item.id.videoId ,
+        channelName: item.snippet.channelTitle,
+       
       }
-    },
+     
+    }, 
   )
 }

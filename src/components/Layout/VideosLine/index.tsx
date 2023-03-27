@@ -30,7 +30,7 @@ export const VideoLine: FC = () => {
         Your Videos
       </h1>
       
-          <div className="overflow-scroll" >
+          <div className="overflow-scroll overflow-y-hidden" >
       {videoSection1}
      </div>
     
@@ -38,12 +38,12 @@ export const VideoLine: FC = () => {
 
         New Videos
       </h1>
-      <div className="overflow-scroll">
+      <div className="overflow-scroll overflow-y-hidden">
       {videoSection2}
       </div>
       <h1 className="text-3xl pb-4  ml-6 font-bold font-family-jakarta text-black">Other</h1>
 
-      <div className="overflow-scroll">
+      <div className="overflow-scroll overflow-y-hidden">
       {videoSection3}
       </div>
     </div>
