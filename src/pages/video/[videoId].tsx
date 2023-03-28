@@ -46,10 +46,10 @@ const [auth, setAuth] = useState<string | boolean>("loading")
 
     <>
      <Header />
-    <div className="w-full h-screen flex-col py-12 px-24 overflow-sroll">
-      <div className="player rounded-2xl overflow-hidden flex w-full sm:h-4/6 outline-0  ">
+    <div className="w-full h-screen flex-col md:py-12 px-24 overflow-sroll">
+      <div className="player rounded-2xl overflow-hidden flex w-full  outline-0  ">
         <iframe
-          sandbox="allow-forms  allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation"
+          sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation"
           id="ytplayer"
           width="60%"
           height=""

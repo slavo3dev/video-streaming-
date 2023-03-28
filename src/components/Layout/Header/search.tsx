@@ -19,7 +19,7 @@ export const SearchBar = ():JSX.Element => {
 
   return (
     <div className="flex items-center ">
-      <div className="relative pl-8 w-80">
+      <div className="relative pl-8 w-40 sm:w-80">
         <input
           type="text"
           onChange={handleInput}

@@ -101,6 +101,7 @@ a {
   }
 }
 
+
 @media only screen and (max-width: 600px) {
   .desktop-view {
     display: none;
@@ -124,6 +125,7 @@ a {
   }
 }
 
+
 @media only screen and (max-width: 425px) {
   .login-input {
     width: 300px;
@@ -132,4 +134,5 @@ a {
   .login-button {
     width: 300px;
   }
+
 }
