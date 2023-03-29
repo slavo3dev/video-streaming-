@@ -30,11 +30,11 @@ export default function Settings() {
     <div className="">
       <Header />
       <div className="min-h-screen w-screen flex overflow-scroll flex-col">
-        <h1 className="font-family-jakarta font-bold text-3xl not-italic m-28 ml-36 ">
+        <h1 className="font-family-jakarta font-bold text-3xl not-italic m-28 MD:ml-36 ">
           Settings
         </h1>
-        <div className=" ">
-          <ul className=" text-xl ml-36 flex flex-col">
+        <div className="">
+          <ul className=" text-xl md:ml-36 flex flex-col">
             <li className="py-2 flex tracking-wider ">
               <div className="flex green-hover font-normal text-slate-400 hover:font-bold hover:text-emerald-500">
                 <svg
@@ -74,11 +74,11 @@ export default function Settings() {
             </li>
           </ul>
         </div>
-        <p className="py-2 flex ml-36 pt-36 font-semibold text-xl tracking-wider text-red-500 ">
+        <p className="py-2 flex ml-8 md:ml-36 pt-36 font-semibold text-xl tracking-wider text-red-500 ">
           <Image
             width={30}
             height={6}
-            className=" mr-2 rounded-full"
+            className="mr-2 rounded-full"
             src="/../public/LogoutIcon.png"
             alt={"Menu bar"}
           ></Image>
