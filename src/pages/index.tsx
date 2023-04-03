@@ -18,8 +18,9 @@ const Homepage = () => {
   }, [auth])
 
   let homePage = (
-    <div className="flex flex-col min-h-screen overflow-hidden w-full">
-      <div className="lg:absolute lg:inset-y-0"></div>
+
+    <div className="flex flex-col bg-slate-50 min-h-screen w-full">
+
       <Header />
       <VideoLine />
       <Footer />
@@ -34,4 +35,6 @@ const Homepage = () => {
 
   return auth === "loading" ? Spinning : auth ? homePage : LoginUser
 }
+
 export default Homepage
+

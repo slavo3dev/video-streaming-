@@ -2,7 +2,7 @@ import { FC } from "react";
 
 export const Footer: FC = () => {
   return (
-    <footer className="w-full bg-sky-600 mt-auto text-white">
+    <footer className="w-full bg-green-600 mt-auto text-white">
       <div className="w-full p-10 space-y-2">
         <div className="flex flex-wrap w-full flex my-4">
           <div className="sm:w-1/3 w-1/3">

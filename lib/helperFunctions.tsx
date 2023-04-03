@@ -7,7 +7,11 @@ import Link from "next/link"
 import { Card } from "src/components"
 
 export const SubscribedSectionLine: any = () => {
-  let subscribedVideos: VideoType[] = getVideos("creatorOne")
+
+
+  
+  let subscribedVideos: VideoType[] = getVideos("")
+
   const context = useContext(CreatorContext)
   function subscribedContent() {
     context.setState(constants.creatorOne.state)
@@ -18,26 +22,31 @@ export const SubscribedSectionLine: any = () => {
   }
 
   return (
-    <div
-      className="overflow-x-scroll w-screen flex flex-row"
-      onClick={() => subscribedContent()}
-    >
+    <div className="overflow-x-scroll w-screen flex flex-row">
       {subscribedVideos.map(
         (
           video: {
             id: string
             imgUrl: string
             title: string
+            channelName: string
           },
           idx: {},
         ) => {
           return (
-            <Link href={`/video/${video.id}`} key={video.id + Math.random()}>
+
+            <Link
+              onClick={() => subscribedContent()}
+              href={`/video/${video.id}`}
+              key={video.id + Math.random()}
+            >
+
               <Card
                 id={idx}
                 key={video.id}
                 imgUrl={video.imgUrl}
                 title={video.title}
+                name={video.channelName}
               />
             </Link>
           )
@@ -60,26 +69,33 @@ export const NewSectionLine = () => {
   let newVideos: VideoType[] = getVideos("creatorTwo")
 
   return (
-    <div
-      className="overflow-x-scroll w-screen flex flex-row"
-      onClick={() => newContent()}
-    >
+
+    <div className="overflow-x-scroll w-screen  flex flex-row">
+
       {newVideos.map(
         (
           video: {
             id: string
             imgUrl: string
             title: string
+            channelName: string
           },
           idx: {},
         ) => {
           return (
-            <Link href={`/video/${video.id}`} key={video.id + Math.random()}>
+
+            <Link
+              onClick={() => newContent()}
+              href={`/video/${video.id}`}
+              key={video.id + Math.random()}
+            >
+
               <Card
                 id={idx}
                 key={video.id}
                 imgUrl={video.imgUrl}
                 title={video.title}
+                name={video.channelName}
               />
             </Link>
           )
@@ -100,21 +116,24 @@ export const PopularSectionLine = () => {
   }
   const context = useContext(CreatorContext)
   return (
-    <div
-      className="overflow-x-scroll w-screen flex flex-row"
-      onClick={() => popularContent()}
-    >
+
+    <div className="overflow-x-scroll w-screen  flex flex-row">
+
       {popularVideos.map(
         (
           video: {
             id: string
             imgUrl: string
             title: string
+            channelName: string
           },
           idx: {},
         ) => {
           return (
             <Link
+
+              onClick={() => popularContent()}
+
               href={`/video/${video.id}`}
               key={video.id + Math.floor(Math.random() * Date.now())}
             >
@@ -123,6 +142,7 @@ export const PopularSectionLine = () => {
                 key={video.id}
                 imgUrl={video.imgUrl}
                 title={video.title}
+                name={video.channelName}
               />
             </Link>
           )
