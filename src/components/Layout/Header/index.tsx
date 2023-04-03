@@ -5,6 +5,7 @@ import { CreateUser } from "lib//userTag"
 import { LogoutFunc } from "lib/loginFunc"
 import Image from "next/image"
 import { SearchBar } from "./search"
+import Logo from "public/LogoText.png"
 
 export const Header: FC = () => {
   return (
@@ -28,7 +29,7 @@ export const Header: FC = () => {
                     width={128}
                     height={40}
                     className="mr-2 overflow-hidden"
-                    src={"/../public/LogoText.png"}
+                    src={Logo}
                     alt={"FC logo"}
                   ></Image>
                 </Link>

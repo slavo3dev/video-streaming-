@@ -7,6 +7,7 @@ import { magic } from "lib/magic-client"
 import { useEffect, useState } from "react"
 import { Spinner } from "src/components/index"
 import { LogoutFunc } from "lib/loginFunc"
+import LogoutIcon from "public/LogoutIcon.png"
 
 export default function Settings() {
   const [auth, setAuth] = useState<string | boolean>("loading")
@@ -80,7 +81,7 @@ export default function Settings() {
             width={30}
             height={6}
             className="mr-2 rounded-full"
-            src="/../public/LogoutIcon.png"
+            src= {LogoutIcon}
             alt={"Menu bar"}
           ></Image>
           <LogoutFunc />

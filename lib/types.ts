@@ -24,7 +24,7 @@ export type CreatorType={
   image:string,
   paymentLink:string,
   video:string,
-  photo:string,
+  photo:StaticImageData,
   subscription: boolean,
 }
 export type getVideosType = (creator: string)=>{

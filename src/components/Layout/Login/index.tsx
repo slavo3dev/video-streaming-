@@ -3,6 +3,7 @@ import { useState } from "react"
 import { magic } from "lib/magic-client"
 import { useRouter } from "next/router"
 import Image from "next/image"
+import Icon from "public/LogoText.png"
 export const Login: FC = () => {
   const router = useRouter()
   const [authData, setAuthData] = useState({ email: "", userMsg: "" })
@@ -39,7 +40,7 @@ export const Login: FC = () => {
         <Image
           width={280}
           height={140}
-          src={"/../public/LogoText.png"}
+          src={Icon}
           alt={"FC Logo"}
         ></Image>
       </div>
