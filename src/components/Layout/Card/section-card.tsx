@@ -9,6 +9,7 @@ export const CardSection: FC = () => {
 
   return (
     <>
+
       <div className="lg:m-16 mt-12 ">
         <p className="text-3xl ml-4 font-bold font-family-jakarta text-black">Famous Creators</p>
           <div className=" pt-6 grid grid-cols-2  lg:grid-cols-4 lg:gap-6 overflow-x-hidden overflow-y-hidden ">
@@ -29,6 +30,7 @@ export const CardSection: FC = () => {
                   photo={creator.photo}
                   link={`/video/${creator.video}`}
                   avatar={creator.image}
+
                 />
               </div>
             </div>

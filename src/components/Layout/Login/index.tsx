@@ -44,11 +44,13 @@ export const Login: FC = () => {
         ></Image>
       </div>
       <div className="center m-0 absolute top-3/4 left-2/4">
+
         <form className="items-center h-64 p-2 center left-2/4 justify-start rounded-md text-left flex flex-col relative">
           <div className="flex flex-col ">
             <h1 className="text-slate-400 text-sm font-light">Email</h1>
             <input
               className="email rounded-xl drop-shadow-[0_35px_35px_rgba(0,0,0,0.10)] border border-slate-200 p-2 h-12 login-input form-info-email"
+
               type="email"
               placeholder="Email"
               onChange={handleOnChangeEmail}
@@ -56,7 +58,9 @@ export const Login: FC = () => {
           </div>
 
           <div className="btn pt-6">
+
             <div className="pb-6">
+
               <input
                 className="accent-green-500"
                 value="true"

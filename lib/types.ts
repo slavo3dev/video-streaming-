@@ -32,7 +32,7 @@ imgUrl: string,
 title: string,
 id: string ,
 channelName: string,
-
+  
 }[];
 export type cardPropsType ={
   imgUrl:string,

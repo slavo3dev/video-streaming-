@@ -1,4 +1,5 @@
 import { useRouter } from "next/router"
+
 import { Card, Login, Profile, Spinner } from "src/components"
 import { getVideos } from "lib/videos"
 import logo from "public/FClogo.jpg"
@@ -97,3 +98,4 @@ const Video = () => {
   return auth === "loading" ? Spinning : auth ? VideoPage : LoginUser
 }
 export default Video
+

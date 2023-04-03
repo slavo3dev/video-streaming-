@@ -19,6 +19,7 @@ export const SearchBar = ():JSX.Element => {
 
   return (
     <div className="flex items-center ">
+
       <div className="relative pl-8 w-40 sm:w-80">
         <input
           type="text"
@@ -30,6 +31,7 @@ export const SearchBar = ():JSX.Element => {
           <svg
             aria-hidden="true"
             className="w-5 h-5 text-gray-400 font-thin dark:text-gray-400"
+
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -40,6 +42,8 @@ export const SearchBar = ():JSX.Element => {
             ></path>
           </svg>
         </div>
+
+
         <div className=" absolute w-full bg-sky-100 flex flex-col ">
           {creators
             .filter(([key, creator]) => {

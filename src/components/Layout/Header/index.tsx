@@ -8,13 +8,16 @@ import { SearchBar } from "./search"
 
 export const Header: FC = () => {
   return (
+
     <header className="header shadow-[0_0_23px_rgba(0,0,0,0.05)] flex w-full items-center bg-white from-black justify-between pt-6 pb-6 h-20 z-10">
       <div className="mobile-view  text-white flex-col">
+
         <CreateUser />
         <span className="text-black">
           <SearchBar />
         </span>
       </div>
+
       <div className="flex items-center  py-4 mx-auto justify-between w-full">
         <nav className="navbar navbar-expand-lg shadow-[0_0_23px_rgba(0,0,0,0.05)] py-2 relative dark:text-grey flex items-center w-full">
           <div className="w-full pl-16 flex flex-wrap items-center justify-between text-grey ">
@@ -79,6 +82,7 @@ export const Header: FC = () => {
               <div className="desktop-view pr-16 text-black font-normal pt-2 ml-4 ">
                 <CreateUser />
               </div>
+
             </div>
             <Burger />
           </div>
@@ -87,3 +91,4 @@ export const Header: FC = () => {
     </header>
   )
 }
+

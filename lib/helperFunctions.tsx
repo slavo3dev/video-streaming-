@@ -8,8 +8,10 @@ import { Card } from "src/components"
 
 export const SubscribedSectionLine: any = () => {
 
+
   
   let subscribedVideos: VideoType[] = getVideos("")
+
   const context = useContext(CreatorContext)
   function subscribedContent() {
     context.setState(constants.creatorOne.state)
@@ -32,11 +34,13 @@ export const SubscribedSectionLine: any = () => {
           idx: {},
         ) => {
           return (
+
             <Link
               onClick={() => subscribedContent()}
               href={`/video/${video.id}`}
               key={video.id + Math.random()}
             >
+
               <Card
                 id={idx}
                 key={video.id}
@@ -65,7 +69,9 @@ export const NewSectionLine = () => {
   let newVideos: VideoType[] = getVideos("creatorTwo")
 
   return (
+
     <div className="overflow-x-scroll w-screen  flex flex-row">
+
       {newVideos.map(
         (
           video: {
@@ -77,11 +83,13 @@ export const NewSectionLine = () => {
           idx: {},
         ) => {
           return (
+
             <Link
               onClick={() => newContent()}
               href={`/video/${video.id}`}
               key={video.id + Math.random()}
             >
+
               <Card
                 id={idx}
                 key={video.id}
@@ -108,7 +116,9 @@ export const PopularSectionLine = () => {
   }
   const context = useContext(CreatorContext)
   return (
+
     <div className="overflow-x-scroll w-screen  flex flex-row">
+
       {popularVideos.map(
         (
           video: {
@@ -121,7 +131,9 @@ export const PopularSectionLine = () => {
         ) => {
           return (
             <Link
+
               onClick={() => popularContent()}
+
               href={`/video/${video.id}`}
               key={video.id + Math.floor(Math.random() * Date.now())}
             >

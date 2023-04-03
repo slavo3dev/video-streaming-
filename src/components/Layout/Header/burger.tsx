@@ -10,11 +10,13 @@ export const Burger = () => {
 
   return (
     <div className="mobile-view flex-col absolute inset-y-0 right-0">
+
       <div className="overflow-hiden rounded-full w-48 h-16 mb-8 flex hover:cursor-pointer">
         <Image onClick={() => setDropdownOpen(!dropdownOpen)} className="absolute  bottom-0 inset-y-0 right-0"
          src={"/../public/burgerIcon.png"}
          width={50}
          height={50}
+
          alt="icon" />
       </div>
       <div

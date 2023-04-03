@@ -54,6 +54,7 @@ export default function Settings() {
               </div>
             </li>
 
+
             <li className="py-2 flex tracking-wider ">
               <div className="flex green-hover font-normal text-slate-400 hover:font-bold hover:text-emerald-500">
                 <svg

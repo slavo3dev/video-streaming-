@@ -22,9 +22,11 @@ body {
   display: none;
 }
 
+
 .player {
   z-index: 1;
 }
+
 
 .login-input {
   width: 420px;
@@ -58,6 +60,7 @@ rect {
 .background-gradient {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 52.91%, #000000 100%);
 }
+
 
 .showcase-content {
   z-index: 2;
@@ -123,6 +126,7 @@ a {
     bottom: 30%;
     left: 5%;
   }
+
 }
 
 
@@ -136,3 +140,4 @@ a {
   }
 
 }
+

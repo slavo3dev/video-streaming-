@@ -18,6 +18,7 @@ return(
                     <span className=" bottom-2 text-sm md:text-lg"> {name}</span>
                     </div>
                     </div>
+
                   </div>
                 </div>
               </Link>
