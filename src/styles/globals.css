@@ -12,13 +12,19 @@ body {
 .mobile-view {
   display: none;
 }
+.login-input {
+  width: 420px;
+  height: 62px;
+}
+.login-button {
+  width: 420px;
+}
 .showcase-content {
   z-index: 2;
   background: rgb(0, 0, 0, 0.65);
   margin: 0 auto;
 }
 .form-info-email {
-  border: none;
   font-size: inherit;
 }
 .center {
@@ -46,7 +52,6 @@ a {
     color-scheme: dark;
   }
   body {
-    color: white;
     background: black;
   }
 }
@@ -64,7 +69,6 @@ a {
   .navbar {
     right: 0px;
     box-shadow: none;
-
     padding-bottom: 26px;
   }
   .player {
