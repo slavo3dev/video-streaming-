@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { LogoutFunc } from "lib/loginFunc";
 import { CreateUser } from "lib/userTag";
+import BurgerIcon from "public/burgerIcon.jpg"
 
 export const Burger = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -13,10 +14,9 @@ export const Burger = () => {
 
       <div className="overflow-hiden rounded-full w-48 h-16 mb-8 flex hover:cursor-pointer">
         <Image onClick={() => setDropdownOpen(!dropdownOpen)} className="absolute  bottom-0 inset-y-0 right-0"
-         src={"/../public/burgerIcon.png"}
+         src={BurgerIcon}
          width={50}
          height={50}
-
          alt="icon" />
       </div>
       <div
