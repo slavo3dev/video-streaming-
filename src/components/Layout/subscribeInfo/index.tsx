@@ -10,36 +10,29 @@ export const Profile: FC = () => {
   const imgUrl = context.image
   const isSubscribed = context.subscription
 
-  const subButton = isSubscribed ?
-        <div className="mt-12 sm:ml-8 ">
-          <h1 className="text-sky-500 text-2xl font-bold">{title}</h1>
-          <div
-            className="bg-sky-500 hover:bg-blue-700 text-white font-bold flex space-x-2 justify-center py-1 px-4 rounded-full w-44 active:bg-blue-800"
-          >
-            Subscribed
-          </div>
-          <div className="text-sky-500 text-2xl font-bold"></div>
-        </div>
-        :
-        <div className="mt-12 sm:ml-8 ">
-          <h1 className="text-sky-500 text-2xl font-bold">{title}</h1>
-          <Link
-            className="bg-sky-500 hover:bg-blue-700 text-white font-bold flex space-x-2 justify-center py-1 px-4 rounded-full w-44 active:bg-blue-800"
-            href={paymentLink}
-          >
-            Subscribe
-          </Link>
-          <div className="text-sky-500 text-2xl font-bold"></div>
-        </div>;
-
-  
+  const subButton = isSubscribed ? (
+    <div className="md:mt-12 sm:ml-8 ">
+      <div className="bg-green-600 hover:bg-green-700 text-white font-bold flex space-x-2 justify-center p-3 md:pt-4 md:text-2xl w-32 h-12 rounded-md md:rounded-2xl md:w-44 md:h-16">
+        Subscribed
+      </div>
+    </div>
+  ) : (
+    <div className="md:mt-12 sm:ml-8">
+      <Link
+        className="bg-green-600 hover:bg-green-700 text-white font-bold flex space-x-2 justify-center p-3 md:pt-4 md:text-2xl w-32 h-12 rounded-md md:rounded-2xl md:w-44 md:h-16"
+        href={paymentLink}
+      >
+        Subscribe
+      </Link>
+    </div>
+  )
 
   return (
     <div>
-      <div className="md:flex xl:flex 2xl:flex lg:flex mt-20 mb-10 ">
-        <div>
+      <div className="flex flex-row justify-between mt-20 mb-10 ">
+        <div className="flex flex-row">
           <Image
-            className="w-36 h-36 rounded-full "
+            className=" w-14 h-14 md:w-36 md:h-full  rounded-full "
             width={36}
             height={36}
             src={
@@ -48,10 +41,13 @@ export const Profile: FC = () => {
             }
             alt={"Creator Image"}
           ></Image>
+          <h1 className="text-black text-sm md:text-2xl font-bold pl-2 md:pl-6 pt-4 md:pt-12">
+            {title}
+          </h1>
         </div>
-          <div >{subButton}</div> 
+        <div>{subButton}</div>
       </div>
-      <div className="text-base font-normal w-5/6 sm:w-96 text-stone-400">
+      <div className="text-base font-normal w-full  text-stone-400">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry standard dummy text ever
         since the 1500s, when an unknown printer took a galley of type and

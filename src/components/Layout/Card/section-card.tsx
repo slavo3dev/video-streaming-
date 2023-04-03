@@ -9,12 +9,13 @@ export const CardSection: FC = () => {
 
   return (
     <>
-      <div className="">
-        <div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 overflow-x-hidden overflow-y-hidden">
+      <div className="lg:m-16 mt-12 ">
+        <p className="text-3xl ml-4 font-bold font-family-jakarta text-black">Famous Creators</p>
+          <div className=" pt-6 grid grid-cols-2  lg:grid-cols-4 lg:gap-6 overflow-x-hidden overflow-y-hidden ">
           {creators.map(([key, creator]) => (
             <div key={key}>
               <div
-                className="w-full"
+                className="lg:w-full "
                 onClick={() => {
                   context.setState(creator.state)
                   context.setCreator(creator.name)
@@ -27,6 +28,7 @@ export const CardSection: FC = () => {
                   name={creator.name}
                   photo={creator.photo}
                   link={`/video/${creator.video}`}
+                  avatar={creator.image}
                 />
               </div>
             </div>

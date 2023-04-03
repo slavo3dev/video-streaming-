@@ -1,6 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500&display=swap");
+
+body,
+html {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
 
 html,
 body {
@@ -9,28 +17,63 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+
 .mobile-view {
   display: none;
 }
+
+.player {
+  z-index: 1;
+}
+
 .login-input {
   width: 420px;
   height: 62px;
 }
+
 .login-button {
   width: 420px;
 }
+
+rect {
+  fill: none;
+}
+
+.green-hover:hover > svg > rect {
+  fill: #19a463;
+}
+
+.font-family-jakarta {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.title-font {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 125.5%;
+}
+
+.background-gradient {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 52.91%, #000000 100%);
+}
+
 .showcase-content {
   z-index: 2;
   background: rgb(0, 0, 0, 0.65);
   margin: 0 auto;
 }
+
 .form-info-email {
   font-size: inherit;
 }
+
 .center {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
 .btn-primary {
   height: 50px;
   font-size: inherit;
@@ -38,6 +81,7 @@ body {
   outline: none;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
 }
+
 a {
   color: inherit;
   text-decoration: none;
@@ -51,29 +95,44 @@ a {
   html {
     color-scheme: dark;
   }
+
   body {
     background: black;
   }
 }
+
+
 @media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  }
   .desktop-view {
     display: none;
   }
+
   .mobile-view {
     display: flex;
     right: 0px;
   }
+
   .navbar {
     right: 0px;
     box-shadow: none;
     padding-bottom: 26px;
   }
+
   .player {
     top: 30%;
     bottom: 30%;
     left: 5%;
   }
+}
+
+
+@media only screen and (max-width: 425px) {
+  .login-input {
+    width: 300px;
+  }
+
+  .login-button {
+    width: 300px;
+  }
+
 }
