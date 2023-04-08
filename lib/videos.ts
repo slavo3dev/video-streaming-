@@ -23,10 +23,9 @@ export const getVideos: getVideosType = (creator: string) => {
       return {
         imgUrl: item.snippet.thumbnails.high.url,
         title: item.snippet.title,
-
         id: item.id.videoId,
         channelName: item.snippet.channelTitle,
-
+    
       }
     },
   )

@@ -5,48 +5,49 @@ import { CreatorContext } from "src/context"
 import { constants } from "./constants"
 import Link from "next/link"
 import { Card } from "src/components"
-const data: Data = require("data/data-videos.json");
+const data: Data = require("data/data-videos.json")
 
 interface Data {
-    [key: string]: {
-  active: any
-  creatorOne: {
-    active: boolean;
-    items: {
-      kind: string;
-      etag: string;
-      id: {
-        kind: string;
-        videoId: string;
-      };
-      snippet: {
-        publishedAt: string;
-        channelId: string;
-        title: string;
-        description: string;
-        thumbnails: any;
-        channelTitle: string;
-        liveBroadcastContent: string;
-        publishTime: string;
-      };
-    }[];
-  };}
-
+  [key: string]: {
+    active: any
+    state: string
+    creatorOne: {
+      active: boolean
+      items: {
+        kind: string
+        etag: string
+        id: {
+          kind: string
+          videoId: string
+        }
+        snippet: {
+          publishedAt: string
+          channelId: string
+          title: string
+          description: string
+          thumbnails: any
+          channelTitle: string
+          liveBroadcastContent: string
+          publishTime: string
+        }
+      }[]
+    }
+  }
 }
 
 export const SubscribedSectionLine = () => {
+  const context = useContext(CreatorContext)
   const subscribedVideos = (): VideoType[] => {
+    let activeVideos: VideoType[] = []
 
-    let activeVideos:VideoType[]= []
-
-    for (const creator in data){
-       const creatorData = data[creator]
-       if(creatorData.active){
+    for (const creator in data) {
+      const creatorData = data[creator]
+      if (creatorData.active) {
         const videos = getVideos(creator)
-        for (const video of videos){
+        for (const video of videos) {
           activeVideos.push(video)
         }
-       }
+      }
     }
 
     for (let i = activeVideos.length - 1; i > 0; i--) {
@@ -58,14 +59,10 @@ export const SubscribedSectionLine = () => {
     return activeVideos
   }
 
-  const context = useContext(CreatorContext)
-  function subscribedContent() {
-
-    context.setState(constants.creatorOne.state)
-    context.setCreator(constants.creatorOne.name)
-    context.setPayment(constants.creatorOne.paymentLink)
-    context.setImage(constants.creatorOne.image)
-    context.setSubscription(constants.creatorOne.subscription)
+  function subscribedContent(Creator: string, Images: string) {
+    context.setCreator(Creator)
+    context.setImage(Images)
+    context.setSubscription(true)
   }
 
   return (
@@ -77,13 +74,12 @@ export const SubscribedSectionLine = () => {
             imgUrl: string
             title: string
             channelName: string
-            
           },
           idx: {},
         ) => {
           return (
             <Link
-              onClick={() => subscribedContent()}
+              onClick={() => subscribedContent(video.channelName, video.imgUrl)}
               href={`/video/${video.id}`}
               key={video.id + Math.random()}
             >
@@ -93,7 +89,6 @@ export const SubscribedSectionLine = () => {
                 imgUrl={video.imgUrl}
                 title={video.title}
                 name={video.channelName}
-                
               />
             </Link>
           )

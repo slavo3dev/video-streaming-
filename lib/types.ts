@@ -45,4 +45,5 @@ export type VideoType = {
   imgUrl: string
   title: string
   channelName:string
+
 }
