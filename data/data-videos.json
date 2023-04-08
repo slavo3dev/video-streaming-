@@ -1,6 +1,7 @@
 {
     "creatorOne": {
             "active": true, 
+            "state":"CreatorOne",
             "items": [
               
               {
@@ -788,6 +789,8 @@
             ]
           },
     "creatorTwo": {
+      "active": false, 
+      "state":"CreatorOne",
         "items": [
             
             {
@@ -1610,6 +1613,8 @@
     
     },
     "creatorThree": {
+      "active": false, 
+      "state":"CreatorOne",
         "items": [
          
             {
@@ -2431,6 +2436,8 @@
           ]
     },
     "creatorFour": {
+      "active": true, 
+      "state":"CreatorOne",
         "items": [
             
             {
@@ -3252,14 +3259,8 @@
           ]
     },
     "creatorFive": {
-  "kind": "youtube#searchListResponse",
-  "etag": "WJeaWecUZXTTuY_fcXu_xtx7u0E",
-  "nextPageToken": "CBkQAA",
-  "regionCode": "US",
-  "pageInfo": {
-    "totalResults": 84,
-    "resultsPerPage": 25
-  },
+   "active": false, 
+   "state":"CreatorOne",
   "items": [
     {
       "kind": "youtube#searchResult",
@@ -4109,14 +4110,8 @@
 }
 ,
     "creatorSix" :{
-  "kind": "youtube#searchListResponse",
-  "etag": "j3SfHlrbjr9kDRbmBpsSeZEHkSc",
-  "nextPageToken": "CBkQAA",
-  "regionCode": "US",
-  "pageInfo": {
-    "totalResults": 80162,
-    "resultsPerPage": 25
-  },
+ "active": false, 
+ "state":"CreatorOne",
   "items": [
     {
       "kind": "youtube#searchResult",
@@ -4972,13 +4967,8 @@
 },
 "creatorSeven" :
 {
-  "kind": "youtube#searchListResponse",
-  "etag": "N5KVqFy2FCVcINJ0RjJGGK6WULc",
-  "regionCode": "US",
-  "pageInfo": {
-    "totalResults": 61,
-    "resultsPerPage": 23
-  },
+  "active": false, 
+  "state":"CreatorOne",
   "items": [
     {
       "kind": "youtube#searchResult",
@@ -5765,14 +5755,8 @@
   ]
 },
 "creatorEight":{
-  "kind": "youtube#searchListResponse",
-  "etag": "jGobUmwnmrspjcog40U5HkGkgbE",
-  "nextPageToken": "CBkQAA",
-  "regionCode": "US",
-  "pageInfo": {
-    "totalResults": 32,
-    "resultsPerPage": 25
-  },
+  "active": true, 
+  "state":"CreatorOne",
   "items": [
     {
       "kind": "youtube#searchResult",
