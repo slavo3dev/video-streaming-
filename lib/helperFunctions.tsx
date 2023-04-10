@@ -1,16 +1,16 @@
 import { VideoType } from "./types"
 import { getVideos } from "./videos"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { CreatorContext } from "src/context"
 import { constants } from "./constants"
 import Link from "next/link"
 import { Card } from "src/components"
 const data: Data = require("data/data-videos.json")
 
+
 interface Data {
   [key: string]: {
     active: any
-    state: string
     creatorOne: {
       active: boolean
       items: {
@@ -37,6 +37,9 @@ interface Data {
 
 export const SubscribedSectionLine = () => {
   const context = useContext(CreatorContext)
+
+
+
   const subscribedVideos = (): VideoType[] => {
     let activeVideos: VideoType[] = []
 
@@ -65,7 +68,7 @@ export const SubscribedSectionLine = () => {
     context.setSubscription(true)
     context.setState(State)
   }
-
+  
   return (
     <div className="overflow-x-scroll w-screen flex flex-row">
       {subscribedVideos().map(
@@ -85,7 +88,7 @@ export const SubscribedSectionLine = () => {
                 subscribedContent(
                   video.channelName,
                   video.imgUrl,
-                  video.stateName,
+                  video.stateName
                 )
               }
               href={`/video/${video.id}`}
@@ -117,7 +120,6 @@ export const NewSectionLine = () => {
   }
 
   let newVideos: VideoType[] = getVideos("creatorTwo")
-
   return (
     <div className="overflow-x-scroll w-screen  flex flex-row">
       {newVideos.map(
