@@ -6,8 +6,6 @@ interface ObjectVideoType {
   }
 }
 
-
-
 export const getVideos: getVideosType = (creator: string) => {
   let creatorType = creator ? creator : "creatorFour"
   return data[creatorType as keyof ObjectVideoType].items.map(
@@ -25,7 +23,7 @@ export const getVideos: getVideosType = (creator: string) => {
         title: item.snippet.title,
         id: item.id.videoId,
         channelName: item.snippet.channelTitle,
-    
+        stateName: creatorType,
       }
     },
   )

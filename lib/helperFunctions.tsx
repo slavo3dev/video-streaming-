@@ -59,10 +59,11 @@ export const SubscribedSectionLine = () => {
     return activeVideos
   }
 
-  function subscribedContent(Creator: string, Images: string) {
+  function subscribedContent(Creator: string, Images: string, State: string) {
     context.setCreator(Creator)
     context.setImage(Images)
     context.setSubscription(true)
+    context.setState(State)
   }
 
   return (
@@ -74,12 +75,19 @@ export const SubscribedSectionLine = () => {
             imgUrl: string
             title: string
             channelName: string
+            stateName: string
           },
           idx: {},
         ) => {
           return (
             <Link
-              onClick={() => subscribedContent(video.channelName, video.imgUrl)}
+              onClick={() =>
+                subscribedContent(
+                  video.channelName,
+                  video.imgUrl,
+                  video.stateName,
+                )
+              }
               href={`/video/${video.id}`}
               key={video.id + Math.random()}
             >
