@@ -49,3 +49,30 @@ export type VideoType = {
   stateName: string
   imgCreator: string
 }
+export interface Data {
+  [key: string]: {
+    active: boolean
+    creatorOne: {
+      active: boolean
+      items: {
+        kind: string
+        etag: string
+        id: {
+          kind: string
+          videoId: string
+        }
+        snippet: {
+          imgCreator:string
+          publishedAt: string
+          channelId: string
+          title: string
+          description: string
+          thumbnails: string
+          channelTitle: string
+          liveBroadcastContent: string
+          publishTime: string
+        }
+      }[]
+    }
+  }
+}

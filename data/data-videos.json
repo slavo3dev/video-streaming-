@@ -1,6 +1,6 @@
 {
   "creatorOne": {
-    "active": true,
+    "active": true,    
     "items": [
       {
         "kind": "youtube#searchResult",
@@ -325,6 +325,7 @@
           "videoId": "vtZxaZmIQRQ"
         },
         "snippet": {
+          "imgCreator": "https://yt3.googleusercontent.com/5_TYQJ-59yU45NoK1GpQcRuov8OgZuwuSiS-0X8IveZI3QK_tKaiQxx9BHGqVkGogD08zY-txA=s900-c-k-c0x00ffffff-no-rj",
           "publishedAt": "2021-08-19T02:15:25Z",
           "channelId": "UChPuCAEXg7iYkVNjQY1NGYg",
           "title": "Donald Trump Jr. talks Afghanistan with Seal Team 6 Veteran!",

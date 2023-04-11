@@ -1,58 +1,21 @@
-import { VideoType } from "./types"
+import { Data, VideoType } from "./types"
 import { getVideos } from "./videos"
 import { useContext } from "react"
 import { CreatorContext } from "src/context"
 import { constants } from "./constants"
 import Link from "next/link"
 import { Card } from "src/components"
+
 const data: Data = require("data/data-videos.json")
-
-
-interface Data {
-  [key: string]: {
-    active: any
-    creatorOne: {
-      active: boolean
-      items: {
-        kind: string
-        etag: string
-        id: {
-          kind: string
-          videoId: string
-        }
-        snippet: {
-          imgCreator:string
-          publishedAt: string
-          channelId: string
-          title: string
-          description: string
-          thumbnails: any
-          channelTitle: string
-          liveBroadcastContent: string
-          publishTime: string
-        }
-      }[]
-    }
-  }
-}
 
 export const SubscribedSectionLine = () => {
   const context = useContext(CreatorContext)
-
-
-
   const subscribedVideos = (): VideoType[] => {
     let activeVideos: VideoType[] = []
 
-    for (const creator in data) {
-      const creatorData = data[creator]
-      if (creatorData.active) {
-        const videos = getVideos(creator)
-        for (const video of videos) {
-          activeVideos.push(video)
-        }
-      }
-    }
+  const activeCreators = Object.keys(data).filter(creator => data[creator].active)
+  const activeCreatorVideos = activeCreators.map(creator => getVideos(creator)).flat()
+   activeVideos.push(...activeCreatorVideos)
 
     for (let i = activeVideos.length - 1; i > 0; i--) {
       const mix = Math.floor(Math.random() * (i + 1))
