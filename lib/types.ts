@@ -33,6 +33,7 @@ export type getVideosType = (creator: string) => {
   id: string
   channelName: string
   stateName: string
+  imgCreator:string
 }[]
 export type cardPropsType = {
   imgUrl: string
@@ -46,4 +47,5 @@ export type VideoType = {
   title: string
   channelName: string
   stateName: string
+  imgCreator: string
 }

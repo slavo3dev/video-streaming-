@@ -1,6 +1,6 @@
 import { VideoType } from "./types"
 import { getVideos } from "./videos"
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import { CreatorContext } from "src/context"
 import { constants } from "./constants"
 import Link from "next/link"
@@ -21,6 +21,7 @@ interface Data {
           videoId: string
         }
         snippet: {
+          imgCreator:string
           publishedAt: string
           channelId: string
           title: string
@@ -79,6 +80,8 @@ export const SubscribedSectionLine = () => {
             title: string
             channelName: string
             stateName: string
+            imgCreator:string
+
           },
           idx: {},
         ) => {
@@ -87,8 +90,9 @@ export const SubscribedSectionLine = () => {
               onClick={() =>
                 subscribedContent(
                   video.channelName,
-                  video.imgUrl,
+                  video.imgCreator ,
                   video.stateName
+                  
                 )
               }
               href={`/video/${video.id}`}
