@@ -1,4 +1,4 @@
-import { VideoType } from "./types"
+import { Data, VideoType } from "./types"
 import { getVideos } from "./videos"
 import { useContext } from "react"
 import { CreatorContext } from "src/context"
@@ -6,41 +6,61 @@ import { constants } from "./constants"
 import Link from "next/link"
 import { Card } from "src/components"
 
-export const SubscribedSectionLine: any = () => {
+const data: Data = require("data/data-videos.json")
 
-
-  
-  let subscribedVideos: VideoType[] = getVideos("")
-
+export const SubscribedSectionLine = () => {
   const context = useContext(CreatorContext)
-  function subscribedContent() {
-    context.setState(constants.creatorOne.state)
-    context.setCreator(constants.creatorOne.name)
-    context.setPayment(constants.creatorOne.paymentLink)
-    context.setImage(constants.creatorOne.image)
-    context.setSubscription(constants.creatorOne.subscription)
+  const subscribedVideos = (): VideoType[] => {
+    let activeVideos: VideoType[] = []
+
+  const activeCreators = Object.keys(data).filter(creator => data[creator].active)
+  const activeCreatorVideos = activeCreators.map(creator => getVideos(creator)).flat()
+   activeVideos.push(...activeCreatorVideos)
+
+    for (let i = activeVideos.length - 1; i > 0; i--) {
+      const mix = Math.floor(Math.random() * (i + 1))
+      const temp = activeVideos[i]
+      activeVideos[i] = activeVideos[mix]
+      activeVideos[mix] = temp
+    }
+    return activeVideos
   }
 
+  function subscribedContent(Creator: string, Images: string, State: string) {
+    context.setCreator(Creator)
+    context.setImage(Images)
+    context.setSubscription(true)
+    context.setState(State)
+  }
+  
   return (
     <div className="overflow-x-scroll w-screen flex flex-row">
-      {subscribedVideos.map(
+      {subscribedVideos().map(
         (
           video: {
             id: string
             imgUrl: string
             title: string
             channelName: string
+            stateName: string
+            imgCreator:string
+
           },
           idx: {},
         ) => {
           return (
-
             <Link
-              onClick={() => subscribedContent()}
+              onClick={() =>
+                subscribedContent(
+                  video.channelName,
+                  video.imgCreator ,
+                  video.stateName
+                  
+                )
+              }
               href={`/video/${video.id}`}
               key={video.id + Math.random()}
             >
-
               <Card
                 id={idx}
                 key={video.id}
@@ -67,11 +87,8 @@ export const NewSectionLine = () => {
   }
 
   let newVideos: VideoType[] = getVideos("creatorTwo")
-
   return (
-
     <div className="overflow-x-scroll w-screen  flex flex-row">
-
       {newVideos.map(
         (
           video: {
@@ -83,13 +100,11 @@ export const NewSectionLine = () => {
           idx: {},
         ) => {
           return (
-
             <Link
               onClick={() => newContent()}
               href={`/video/${video.id}`}
               key={video.id + Math.random()}
             >
-
               <Card
                 id={idx}
                 key={video.id}
@@ -116,9 +131,7 @@ export const PopularSectionLine = () => {
   }
   const context = useContext(CreatorContext)
   return (
-
     <div className="overflow-x-scroll w-screen  flex flex-row">
-
       {popularVideos.map(
         (
           video: {
@@ -131,9 +144,7 @@ export const PopularSectionLine = () => {
         ) => {
           return (
             <Link
-
               onClick={() => popularContent()}
-
               href={`/video/${video.id}`}
               key={video.id + Math.floor(Math.random() * Date.now())}
             >

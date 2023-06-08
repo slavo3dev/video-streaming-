@@ -82,7 +82,7 @@ export const constants: Constants = {
   },
   creatorSeven: {
     state: "creatorSeven",
-    name: "PowerfulJRE",
+    name: "Joe Rogan",
     image:
       "https://yt3.googleusercontent.com/ytc/AL5GRJXxw6Z2O6R2LSeCbDFhcBITwJiVxR7-tFOW663eXg=s176-c-k-c0x00ffffff-no-rj",
     paymentLink: "https://buy.stripe.com/test_28o2aB2CZ6PX9EsfZ8",
@@ -98,6 +98,6 @@ export const constants: Constants = {
     paymentLink: "https://buy.stripe.com/test_6oE3eFelH8Y5g2Q00b",
     video: "x4nT1wEwy1Y",
     photo: Lex,
-    subscription: false,
+    subscription: true,
   },
 }

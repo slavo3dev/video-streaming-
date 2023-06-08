@@ -18,31 +18,61 @@ export type creatorContextType = {
   subscription: boolean
   setSubscription: (subscription: boolean) => void
 }
-export type CreatorType={
-  state:string,
-  name:string,
-  image:string,
-  paymentLink:string,
-  video:string,
-  photo:StaticImageData,
-  subscription: boolean,
+export type CreatorType = {
+  state: string
+  name: string
+  image: string
+  paymentLink: string
+  video: string
+  photo: StaticImageData
+  subscription: boolean
 }
-export type getVideosType = (creator: string)=>{
-imgUrl: string,
-title: string,
-id: string ,
-channelName: string,
-  
-}[];
-export type cardPropsType ={
-  imgUrl:string,
-  id:{},
-  title:string
-  name:string;
+export type getVideosType = (creator: string) => {
+  imgUrl: string
+  title: string
+  id: string
+  channelName: string
+  stateName: string
+  imgCreator:string
+}[]
+export type cardPropsType = {
+  imgUrl: string
+  id: {}
+  title: string
+  name: string
 }
 export type VideoType = {
   id: string
   imgUrl: string
   title: string
-  channelName:string
+  channelName: string
+  stateName: string
+  imgCreator: string
+}
+export interface Data {
+  [key: string]: {
+    active: boolean
+    creatorOne: {
+      active: boolean
+      items: {
+        kind: string
+        etag: string
+        id: {
+          kind: string
+          videoId: string
+        }
+        snippet: {
+          imgCreator:string
+          publishedAt: string
+          channelId: string
+          title: string
+          description: string
+          thumbnails: string
+          channelTitle: string
+          liveBroadcastContent: string
+          publishTime: string
+        }
+      }[]
+    }
+  }
 }
