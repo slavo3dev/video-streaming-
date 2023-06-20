@@ -13,7 +13,10 @@ export const SubscribedSectionLine = () => {
   const subscribedVideos = (): VideoType[] => {
     let activeVideos: VideoType[] = []
 
-  const activeCreators = Object.keys(data).filter(creator => data[creator].active)
+     
+//  const NotActiveCreators = Object.keys(data).filter(creator => data[creator].active != true ) --NOT ACTIVE CREATORS
+
+  const activeCreators = Object.keys(data).filter(creator => data[creator].active )
   const activeCreatorVideos = activeCreators.map(creator => getVideos(creator)).flat()
    activeVideos.push(...activeCreatorVideos)
 
@@ -55,7 +58,7 @@ export const SubscribedSectionLine = () => {
                   video.channelName,
                   video.imgCreator ,
                   video.stateName
-                  
+
                 )
               }
               href={`/video/${video.id}`}
@@ -76,9 +79,9 @@ export const SubscribedSectionLine = () => {
   )
 }
 
-export const NewSectionLine = () => {
+export const Category1SectionLine = () => {
   const context = useContext(CreatorContext)
-  function newContent() {
+  function category1Content() {
     context.setState(constants.creatorTwo.state)
     context.setCreator(constants.creatorTwo.name)
     context.setPayment(constants.creatorTwo.paymentLink)
@@ -101,7 +104,7 @@ export const NewSectionLine = () => {
         ) => {
           return (
             <Link
-              onClick={() => newContent()}
+              onClick={() => category1Content()}
               href={`/video/${video.id}`}
               key={video.id + Math.random()}
             >
@@ -120,9 +123,9 @@ export const NewSectionLine = () => {
   )
 }
 
-export const PopularSectionLine = () => {
-  let popularVideos: VideoType[] = getVideos("creatorSeven")
-  function popularContent() {
+export const Category2SectionLine = () => {
+  let notSubscribedVideos: VideoType[] = getVideos("creatorSeven")
+  function category2Content() {
     context.setState(constants.creatorSeven.state)
     context.setCreator(constants.creatorSeven.name)
     context.setPayment(constants.creatorSeven.paymentLink)
@@ -132,7 +135,7 @@ export const PopularSectionLine = () => {
   const context = useContext(CreatorContext)
   return (
     <div className="overflow-x-scroll w-screen  flex flex-row">
-      {popularVideos.map(
+      {notSubscribedVideos.map(
         (
           video: {
             id: string
@@ -144,7 +147,7 @@ export const PopularSectionLine = () => {
         ) => {
           return (
             <Link
-              onClick={() => popularContent()}
+              onClick={() => category2Content()}
               href={`/video/${video.id}`}
               key={video.id + Math.floor(Math.random() * Date.now())}
             >
