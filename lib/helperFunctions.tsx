@@ -8,26 +8,30 @@ import { Card } from "src/components"
 
 const data: Data = require("data/data-videos.json")
 
+const subscribedVideos = (): VideoType[] => {
+  let activeVideos: VideoType[] = []
+
+  //  const NotActiveCreators = Object.keys(data).filter(creator => data[creator].active != true ) --NOT ACTIVE CREATORS
+
+  const activeCreators = Object.keys(data).filter(
+    (creator) => data[creator].active,
+  )
+  const activeCreatorVideos = activeCreators
+    .map((creator) => getVideos(creator))
+    .flat()
+  activeVideos.push(...activeCreatorVideos)
+
+  for (let i = activeVideos.length - 1; i > 0; i--) {
+    const mix = Math.floor(Math.random() * (i + 1))
+    const temp = activeVideos[i]
+    activeVideos[i] = activeVideos[mix]
+    activeVideos[mix] = temp
+  }
+  return activeVideos
+}
+
 export const SubscribedSectionLine = () => {
   const context = useContext(CreatorContext)
-  const subscribedVideos = (): VideoType[] => {
-    let activeVideos: VideoType[] = []
-
-     
-//  const NotActiveCreators = Object.keys(data).filter(creator => data[creator].active != true ) --NOT ACTIVE CREATORS
-
-  const activeCreators = Object.keys(data).filter(creator => data[creator].active )
-  const activeCreatorVideos = activeCreators.map(creator => getVideos(creator)).flat()
-   activeVideos.push(...activeCreatorVideos)
-
-    for (let i = activeVideos.length - 1; i > 0; i--) {
-      const mix = Math.floor(Math.random() * (i + 1))
-      const temp = activeVideos[i]
-      activeVideos[i] = activeVideos[mix]
-      activeVideos[mix] = temp
-    }
-    return activeVideos
-  }
 
   function subscribedContent(Creator: string, Images: string, State: string) {
     context.setCreator(Creator)
@@ -35,7 +39,7 @@ export const SubscribedSectionLine = () => {
     context.setSubscription(true)
     context.setState(State)
   }
-  
+
   return (
     <div className="overflow-x-scroll w-screen flex flex-row">
       {subscribedVideos().map(
@@ -46,8 +50,7 @@ export const SubscribedSectionLine = () => {
             title: string
             channelName: string
             stateName: string
-            imgCreator:string
-
+            imgCreator: string
           },
           idx: {},
         ) => {
@@ -56,9 +59,8 @@ export const SubscribedSectionLine = () => {
               onClick={() =>
                 subscribedContent(
                   video.channelName,
-                  video.imgCreator ,
-                  video.stateName
-
+                  video.imgCreator,
+                  video.stateName,
                 )
               }
               href={`/video/${video.id}`}

@@ -18,9 +18,7 @@ const Homepage = () => {
   }, [auth])
 
   let homePage = (
-
     <div className="flex flex-col bg-slate-50 min-h-screen w-full">
-
       <Header />
       <VideoLine />
       <Footer />
@@ -37,4 +35,3 @@ const Homepage = () => {
 }
 
 export default Homepage
-
