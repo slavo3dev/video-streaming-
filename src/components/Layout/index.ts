@@ -6,5 +6,16 @@ import { CardSection } from "src/components/Layout/Card/section-card"
 import { Spinner } from "./Spinner/spinner"
 import { Profile } from "./subscribeInfo"
 import { VideoLine } from "./VideosLine"
+import { SetingsMenu } from "./SetingsMenu"
 
-export { Footer, Header, Login, Card, CardSection, Spinner, Profile, VideoLine}
+export {
+  Footer,
+  Header,
+  Login,
+  Card,
+  CardSection,
+  Spinner,
+  Profile,
+  VideoLine,
+  SetingsMenu,
+}
