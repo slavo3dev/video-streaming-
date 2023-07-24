@@ -1,7 +1,6 @@
 import { magic } from "lib/magic-client"
 import { useEffect, useState } from "react"
 import { Login, Header, Footer, Spinner, VideoLine } from "src/components/index"
-import { Layout } from "src/components/index"
 
 const Homepage = () => {
   const [auth, setAuth] = useState<string | boolean>("loading")
@@ -19,11 +18,11 @@ const Homepage = () => {
   }, [auth])
 
   let homePage = (
-    <Layout>
+    <>
       <Header />
       <VideoLine />
       <Footer />
-    </Layout>
+    </>
   )
   let LoginUser = (
     <div>

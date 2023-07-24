@@ -25,11 +25,11 @@ export default function Settings() {
   })
   let Spinning = <Spinner />
   let setingsPage = (
-    <div className="flex flex-col bg-slate-50 min-h-screen w-full">
+    <>
       <Header />
       <SetingsMenu />
       <Footer />
-    </div>
+    </>
   )
   return auth === "loading" ? Spinning : auth ? setingsPage : Spinning
 }

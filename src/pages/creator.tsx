@@ -18,12 +18,11 @@ export default function CreatorPage() {
   }, [auth])
 
   let creatorPage = (
-    <div className="flex flex-col bg-slate-50 min-h-screen w-full">
-      <div className="lg:absolute lg:inset-y-0 "></div>
+    <>
       <Header />
       <CardSection />
       <Footer />
-    </div>
+    </>
   )
   let LoginUser = (
     <div>

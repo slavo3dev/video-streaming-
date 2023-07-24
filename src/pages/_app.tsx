@@ -2,6 +2,7 @@ import "src/styles/globals.css"
 import type { AppProps } from "next/app"
 import { useState } from "react"
 import { CreatorContext } from "src/context"
+import { Layout } from "src/components"
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
   const [creator, setCreator] = useState("Full Send Podcast")
@@ -28,7 +29,9 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
         setSubscription,
       }}
     >
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </CreatorContext.Provider>
   )
 }
