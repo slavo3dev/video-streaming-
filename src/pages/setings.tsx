@@ -4,7 +4,7 @@ import { useRouter } from "next/router"
 import { magic } from "lib/magic-client"
 import { useEffect, useState } from "react"
 import { Spinner } from "src/components/index"
-import { SetingsMenu } from "src/components/Layout"
+import { SetingsMenu } from "src/components"
 
 export default function Settings() {
   const [auth, setAuth] = useState<string | boolean>("loading")
