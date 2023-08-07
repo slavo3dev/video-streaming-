@@ -5,7 +5,7 @@ import { CreatorContext } from "src/context"
 import { Layout } from "src/components"
 
 function useLocalStorageState(key: string, defaultValue: any) {
-  const [state, setState] = useState(() => {
+  const [stateLocal, setStateLocal] = useState(() => {
     if (typeof window !== "undefined") {
       const storedState = localStorage.getItem(key)
       return storedState || defaultValue
@@ -15,11 +15,11 @@ function useLocalStorageState(key: string, defaultValue: any) {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      localStorage.setItem(key, state)
+      localStorage.setItem(key, stateLocal)
     }
-  }, [key, state])
+  }, [key, stateLocal])
 
-  return [state, setState]
+  return [stateLocal, setStateLocal]
 }
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
@@ -52,7 +52,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
         setImage,
         state,
         setState,
-        subscription: subscription === "true", // Convert the subscription to a boolean
+        subscription,
         setSubscription,
       }}
     >
