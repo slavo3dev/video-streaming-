@@ -33,7 +33,7 @@ Open http://localhost:3000 with your browser to see the result.
 ## Usage
 After finishing Setup you will be taken to the login page. 
 After you Register, you will be directed to Main Page where you can see the cretors content.
-##
+
 In order to use external images in app, configuration is required. We use domain in next.config.json to provide list of
 allowed hostnames for external images. Learn more: https://nextjs.org/docs/api-reference/next/legacy/image#domains .
 
